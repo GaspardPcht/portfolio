@@ -20,7 +20,7 @@ export default function Header() {
           rel="noopener noreferrer"
         >
           <Image
-            src="/assets/logo-linkedin-noir.png"
+            src="/assets/icons/logo-linkedin-noir.png"
             alt="Logo LinkedIn"
             width={50}
             height={50}
@@ -32,7 +32,7 @@ export default function Header() {
           rel="noopener noreferrer"
         >
           <Image
-            src="/assets/github.svg"
+            src="/assets/icons/github.svg"
             alt="Logo GitHub"
             width={35}
             height={35}
