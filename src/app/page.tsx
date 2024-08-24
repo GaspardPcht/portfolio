@@ -43,7 +43,7 @@ export default function StartScreen() {
         </h1>
       </div>
       <div className="absolute bottom-[0px] left-[10%] transform -translate-x-1/2">
-        <Image src="/assets/hey.png" alt="Memoji Hey" width={200} height={30} />
+        <Image src="/assets/memoji/hey.png" alt="Memoji Hey" width={200} height={30} />
       </div>
       <div className="flex justify-end mr-[200px] mb-[100px] mt-5">
         <Link
