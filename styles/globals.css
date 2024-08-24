@@ -6,11 +6,9 @@
 * {
   @apply m-0 p-0 box-border;
 }
-
 html, body {
   @apply font-poppins leading-relaxed text-darkGray bg-lightGray;
 }
-
 a {
   @apply no-underline text-inherit;
 }
@@ -84,4 +82,46 @@ button:hover {
   h1 {
     @apply text-3xl;
   }
+}
+
+/* Animation de slide pour les cartes */
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.card-slide-in {
+  animation: slide-in 0.5s ease-out;
+}
+
+.card-slide-out {
+  animation: slide-out 0.5s ease-in;
+}
+
+/* Styles pour le carrousel */
+.carousel-wrapper {
+  @apply overflow-hidden relative w-full;
+}
+
+.carousel-container {
+  @apply flex space-x-4; /* Ajoute de l'espacement entre les cartes */
+  @apply whitespace-nowrap;
+  @apply transition-transform duration-500 ease-in-out;
 }
