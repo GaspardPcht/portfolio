@@ -27,7 +27,7 @@ export default function StartScreen() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/assets/github.svg"
+              src="/assets/icons/github.svg"
               alt="Logo GitHub"
               width={35}
               height={35}

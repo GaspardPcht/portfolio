@@ -3,12 +3,6 @@ import Image from "next/image";
 import Langues from "../langues/page";
 
 export default function Home() {
-  // const scrollToSection = () => {
-  //   const section = document.getElementById("targetSection");
-  //   if (section) {
-  //     section.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
 
   return (
     <div>
@@ -26,7 +20,7 @@ export default function Home() {
             I'M DEVELOPER WEB AND MOBILE
           </h1>
         </div>
-        <div className="absolute bottom-[-20px] right-[-10%] transform -translate-x-1/2">
+        <div className="absolute bottom-[-0px] right-[-10%] transform -translate-x-1/2">
           <Image
             src="/assets/heyHead.png"
             alt="Memoji Hey"
@@ -34,11 +28,9 @@ export default function Home() {
             height={200}
           />
         </div>
-        <div
-          className="flex justify-center items-center absolute bottom-[30px] right-[45%] transform -translate-x-1/2 cursor-pointer"
-         
-        >
-          <div className="w-[30px] h-[30px] border-r-[5px] border-t-[5px] border-black rotate-[135deg] animate-bounce"></div>
+        <div className="flex justify-center items-center absolute bottom-[30px] right-[45%] transform -translate-x-1/2 cursor-pointer">
+          <div className="w-[30px] h-[30px] border-l-[15px] border-r-[15px] border-t-[15px] border-transparent border-t-black rotate-[-45deg] animate-bounce"> 
+          </div>
         </div>
       </div>
       <Langues />
