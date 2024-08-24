@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset et styles globaux */
+* {
+  @apply m-0 p-0 box-border;
+}
+
+html, body {
+  @apply font-poppins leading-relaxed text-darkGray bg-lightGray;
+}
+
+a {
+  @apply no-underline text-inherit;
+}
+
+ul, ol {
+  @apply list-none;
+}
+
+button {
+  @apply border-none bg-none cursor-pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Typographie */
+body {
+  @apply text-base leading-normal;
+}
+
+h1 {
+  @apply text-4xl mb-2;
+}
+
+h2 {
+  @apply text-3xl mb-2;
+}
+
+p {
+  @apply mb-4;
+}
+
+/* Liens */
+a {
+  @apply text-primary;
+}
+
+a:hover {
+  @apply text-blue-700;
+}
+
+/* Conteneurs et mise en page */
+.container {
+  @apply w-4/5 mx-auto;
+}
+
+.header, .footer {
+  @apply p-4 bg-gray-800 text-white;
+}
+
+.main-content {
+  @apply p-8;
+}
+
+button {
+  @apply px-4 py-2 rounded bg-primary text-white;
+}
+
+button:hover {
+  @apply bg-blue-700;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .container {
+    @apply w-11/12;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+}
