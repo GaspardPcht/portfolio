@@ -19,12 +19,15 @@ const Langues: React.FC = () => {
       <div className="flex flex-col items-start text-[#3C3C3C] mt-[200px] ml-[220px]">
         <h1 className="text-4xl font-bold">LANGUAGES</h1>
       </div>
-      <div className="bg-[#CDCDCB] p-2 text-center flex items-center justify-center absolute mt-[300px] h-[80px] right-[-5%] rounded-[20px]">
-        <p className="text-l mt-3">
-          I have expertise in various technologies including: React, React
-          Native, JavaScript, Express, Node.js, Next.js, HTML, and CSS.
+
+      <div className="bg-[#CDCDCB] p-2 text-center flex items-center justify-center absolute mt-[300px] right-[-5%] rounded-[20px] w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%]">
+        <p className="text-lg mt-3">
+          I am skilled in modern web and mobile technologies including React,
+          JavaScript, TypeScript, Node.js, and more. My expertise ensures the
+          delivery of efficient and scalable solutions.
         </p>
       </div>
+
       <div className="carousel mt-[200px] gap-6 mr-[80px] ml-[200px]">
         <Carousel cards={cardSources} />
       </div>
