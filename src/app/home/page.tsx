@@ -1,8 +1,21 @@
+'use client'
+import React, { useRef } from "react";
 import Header from "../../../components/header";
 import Image from "next/image";
 import Langues from "../langues/page";
 
 export default function Home() {
+  const languesRef = useRef<HTMLDivElement>(null);
+
+  const scrollToLangues = () => {
+    if (languesRef.current) {
+      window.scrollTo({
+        top: languesRef.current.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div>
       <Header />
@@ -30,12 +43,16 @@ export default function Home() {
           />
         </div>
 
-        <div className="flex justify-center items-center absolute bottom-[30px] left-1/2 transform -translate-x-1/2 cursor-pointer">
+        <div
+          onClick={scrollToLangues}
+          className="flex justify-center items-center absolute bottom-[30px] left-1/2 transform -translate-x-1/2 cursor-pointer"
+        >
           <div className="w-[30px] h-[30px] border-l-[15px] border-r-[15px] border-t-[15px] border-transparent border-t-black rotate-[-45deg] animate-bounce"></div>
         </div>
       </div>
 
-      <Langues />
+      {/* Pass the ref to Langues component */}
+      <Langues ref={languesRef} />
     </div>
   );
 }

@@ -1,3 +1,5 @@
+// ../langues/page.tsx
+import React, { forwardRef } from "react";
 import Carousel from "../../../components/carousel";
 import Image from "next/image";
 
@@ -14,9 +16,12 @@ const cardSources = [
   "/assets/icons/redux.png",
 ];
 
-const Langues: React.FC = () => {
+const Langues = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <div className="flex flex-col h-screen w-[90vw] box-border relative">
+    <div
+      ref={ref}
+      className="flex flex-col h-screen w-[90vw] box-border relative"
+    >
       <div className="flex flex-col items-start text-[#3C3C3C] mt-[100px] ml-[220px]">
         <h1 className="text-4xl font-bold">LANGUAGES</h1>
       </div>
@@ -43,6 +48,7 @@ const Langues: React.FC = () => {
       </div>
     </div>
   );
-};
+});
 
+Langues.displayName = "Langues";
 export default Langues;
