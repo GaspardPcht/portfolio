@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedButton from "../../components/button";// Assurez-vous que le chemin est correct
 
 export default function StartScreen() {
   return (
@@ -51,12 +52,7 @@ export default function StartScreen() {
         />
       </div>
       <div className="flex justify-end mr-[200px] mb-[100px] mt-5">
-        <Link
-          className="w-[200px] inline-block py-2 px-8 text-2xl font-bold text-white bg-black rounded-lg text-center no-underline transition-colors duration-300 hover:bg-white hover:text-black"
-          href="/home"
-        >
-          START
-        </Link>
+        <AnimatedButton text="START" href="/home" />
       </div>
     </div>
   );
