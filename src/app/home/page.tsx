@@ -56,12 +56,13 @@ export default function Home() {
 
         <div
           onClick={scrollToLangues}
-          className="flex justify-center items-center absolute bottom-[30px] right-[45%] transform -translate-x-1/2 cursor-pointer"
+          className="flex flex-col justify-center items-center absolute bottom-[30px] right-[40%] transform -translate-x-1/2 cursor-pointer animate-bounce"
         >
-          <div className="w-[30px] h-[30px] border-l-[15px] border-r-[15px] border-t-[15px] border-transparent border-t-black rotate-[-45deg] animate-bounce"></div>
+          <p>Learn more</p>
+          <div className="w-[30px] h-[30px] border-l-[15px] border-r-[15px] border-t-[15px] border-transparent border-t-black"></div>
         </div>
       </div>
-      <Langues ref={languesRef} />
+      <Langues ref={languesRef} scrollToAbout={scrollToAbout} />{" "}
       <About ref={aboutRef} />
     </div>
   );
