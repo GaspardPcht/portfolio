@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BubbleText from "./BubbleText";
 
 interface HeaderProps {
   scrollToAbout: () => void; 
@@ -8,8 +9,8 @@ export default function Header({ scrollToAbout }: HeaderProps) {
   return (
     <div className="flex items-center justify-between ml-8 p-6 border-b border-gray-300">
       <div className="flex items-center gap-[80px] text-black">
-        <span className="text-2xl font-bold font-[League Spartan] text-black">
-          GASPARDPCHT
+        <span className="text-2xl font-bold font-[League Spartan] text-black stroke-black stroke-1 relative z-10">
+          <BubbleText text="GASPARDPCHT" />
         </span>
         <div className="flex gap-[100px] font-semibold text-[#3C3C3C]">
           <span
