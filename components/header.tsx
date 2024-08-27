@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-export default function Header() {
+interface HeaderProps {
+  scrollToAbout: () => void; 
+}
+
+export default function Header({ scrollToAbout }: HeaderProps) {
   return (
     <div className="flex items-center justify-between ml-8 p-6 border-b border-gray-300">
       <div className="flex items-center gap-[80px] text-black">
@@ -8,8 +12,11 @@ export default function Header() {
           GASPARDPCHT
         </span>
         <div className="flex gap-[100px] font-semibold text-[#3C3C3C]">
+          <span onClick={scrollToAbout} className="cursor-pointer">
+            About
+          </span>{" "}
+          {/* Clic pour scroller vers About */}
           <span>Projects</span>
-          <span>About</span>
           <span>Contact</span>
         </div>
       </div>
