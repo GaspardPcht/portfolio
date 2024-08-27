@@ -20,7 +20,7 @@ const Langues: React.FC = () => {
       <div className="flex flex-col items-start text-[#3C3C3C] mt-[200px] ml-[220px]">
         <h1 className="text-4xl font-bold">LANGUAGES</h1>
       </div>
-      <div className="bg-[#CDCDCB] p-2 text-center flex items-center justify-center absolute mt-[300px] w-[40%] h-[80px] right-[10%] rounded-[20px]">
+      <div className="bg-[#CDCDCB] p-2 text-center flex items-center justify-center absolute mt-[300px] h-[80px] right-[10%] rounded-[20px]">
         <p className="text-l mt-3">
           I have expertise in various technologies including: React, React
           Native, JavaScript, Express, Node.js, Next.js, HTML, and CSS.
