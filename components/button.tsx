@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 
 interface AnimatedButtonProps {
   text: string;
@@ -11,6 +12,7 @@ interface AnimatedButtonProps {
 const AnimatedButton: React.FC<AnimatedButtonProps> = ({ text, href }) => {
   const btnRef = useRef<HTMLButtonElement>(null);
   const spanRef = useRef<HTMLSpanElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const button = btnRef.current;
@@ -50,15 +52,22 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ text, href }) => {
     return () => {
       button.removeEventListener("mousemove", handleMouseMove);
       button.removeEventListener("mouseleave", handleMouseLeave);
-      cancelAnimationFrame(requestId); 
+      cancelAnimationFrame(requestId);
     };
   }, []);
+
+  const handleClick = () => {
+    if (href) {
+      router.push(href);
+    }
+  };
 
   return (
     <motion.button
       whileTap={{ scale: 0.985 }}
       ref={btnRef}
       className="relative w-full max-w-xs overflow-hidden rounded-lg bg-slate-950 px-4 py-3 text-lg font-medium text-white hover:bg-black"
+      onClick={handleClick}
     >
       <span className="pointer-events-none relative z-10 mix-blend-difference">
         {text}
