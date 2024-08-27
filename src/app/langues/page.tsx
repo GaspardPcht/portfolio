@@ -1,17 +1,16 @@
-
-
 import Carousel from "../../../components/carousel";
 
 const cardSources = [
   "/assets/icons/react.png",
-  "/assets/icons/express.png",
-  "/assets/icons/node.png",
-  "/assets/icons/next.png",
-  "/assets/icons/html.png",
-  "/assets/icons/css.png",
+  "/assets/icons/JavaScript.png",
   "/assets/icons/typeScript.png",
   "/assets/icons/native.png",
-  "/assets/icons/JavaScript.png",
+  "/assets/icons/next.png",
+  "/assets/icons/node.png",
+  "/assets/icons/html.png",
+  "/assets/icons/css.png",
+  "/assets/icons/express.png",
+  "/assets/icons/redux.png",
 ];
 
 const Langues: React.FC = () => {
@@ -26,7 +25,7 @@ const Langues: React.FC = () => {
           Native, JavaScript, Express, Node.js, Next.js, HTML, and CSS.
         </p>
       </div>
-      <div className="carousel-wrapper mt-[200px] ml-[220px]">
+      <div className="carousel mt-[200px] gap-6 mr-[80px] ml-[200px]">
         <Carousel cards={cardSources} />
       </div>
     </div>
