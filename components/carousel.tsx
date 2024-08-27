@@ -47,7 +47,7 @@ const Carousel: React.FC<{ cards: string[] }> = ({ cards }) => {
   }, [cards.length]);
 
   return (
-    <div className="relative overflow-hidden w-full h-[200px] mt-[100px]">
+    <div className="relative overflow-hidden w-full h-[200px] mt-[100px] rounded-[20px]">
       <div
         className="flex"
         ref={carouselRef}
