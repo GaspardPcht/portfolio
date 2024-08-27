@@ -15,7 +15,7 @@ export default function StartScreen() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/assets/logo-linkedin-noir.png"
+              src="/assets/icons/logo-linkedin-noir.png"
               alt="Logo LinkedIn"
               width={50}
               height={50}
