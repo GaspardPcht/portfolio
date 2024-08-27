@@ -1,4 +1,3 @@
-// ../langues/page.tsx
 import React, { forwardRef } from "react";
 import Carousel from "../../../components/carousel";
 import Image from "next/image";
