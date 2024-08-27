@@ -13,7 +13,7 @@ const cardSources = [
   "/assets/icons/html.png",
   "/assets/icons/css.png",
   "/assets/icons/express.png",
-  "/assets/icons/redux.png",
+  "/assets/icons/Redux.png",
 ];
 
 const Langues = forwardRef<HTMLDivElement>((_, ref) => {

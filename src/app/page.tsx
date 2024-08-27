@@ -36,14 +36,19 @@ export default function StartScreen() {
         </div>
       </header>
       <div className="flex-1 flex items-center ml-[200px] mb-[100px]">
-        <h1 className="text-5xl font-bold text-black">
+        <h1 className="text-5xl font-bold text-[#3C3C3C]">
           <span>HEY THERE!</span>
           <br />
           <span className="mt-4 block">WELCOME IN MY UNIVERSE!</span>
         </h1>
       </div>
       <div className="absolute bottom-[0px] left-[10%] transform -translate-x-1/2">
-        <Image src="/assets/memoji/hey.png" alt="Memoji Hey" width={200} height={30} />
+        <Image
+          src="/assets/memoji/hey.png"
+          alt="Memoji Hey"
+          width={200}
+          height={30}
+        />
       </div>
       <div className="flex justify-end mr-[200px] mb-[100px] mt-5">
         <Link
