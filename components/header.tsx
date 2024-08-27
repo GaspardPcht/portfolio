@@ -12,7 +12,10 @@ export default function Header({ scrollToAbout }: HeaderProps) {
           GASPARDPCHT
         </span>
         <div className="flex gap-[100px] font-semibold text-[#3C3C3C]">
-          <span onClick={scrollToAbout} className="cursor-pointer">
+          <span
+            onClick={scrollToAbout}
+            className="cursor-pointer hover:text-white"
+          >
             About
           </span>{" "}
           {/* Clic pour scroller vers About */}
