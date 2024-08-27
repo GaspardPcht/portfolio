@@ -1,11 +1,13 @@
-'use client'
+"use client";
 import React, { useRef } from "react";
 import Header from "../../../components/header";
 import Image from "next/image";
 import Langues from "../langues/page";
+import About from "../about/page";
 
 export default function Home() {
   const languesRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
 
   const scrollToLangues = () => {
     if (languesRef.current) {
@@ -16,9 +18,18 @@ export default function Home() {
     }
   };
 
+  const scrollToAbout = () => {
+    if (aboutRef.current) {
+      window.scrollTo({
+        top: aboutRef.current.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div>
-      <Header />
+      <Header scrollToAbout={scrollToAbout} />
       <div className="flex flex-col h-[90vh] w-[90vw] relative box-border">
         <div className="flex flex-col items-start mt-[200px] ml-[200px] text-[#3C3C3C]">
           <h1 className="mb-5 text-5xl font-bold">
@@ -50,8 +61,8 @@ export default function Home() {
           <div className="w-[30px] h-[30px] border-l-[15px] border-r-[15px] border-t-[15px] border-transparent border-t-black rotate-[-45deg] animate-bounce"></div>
         </div>
       </div>
-
       <Langues ref={languesRef} />
+      <About ref={aboutRef} />
     </div>
   );
 }
