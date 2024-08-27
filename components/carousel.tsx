@@ -1,40 +1,48 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
-import { motion } from "framer-motion";
 import Card from "./cards";
 
 const Carousel: React.FC<{ cards: string[] }> = ({ cards }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
+  const scrollAmount = 1; // Distance parcourue à chaque mouvement
+  const scrollSpeed = 10; // Temps entre chaque mouvement en millisecondes
 
   useEffect(() => {
-    const scrollSpeed = 0.5; // Vitesse du défilement 
-    const scrollAmount = 0.5; // Distance parcourue 
-    let scrollInterval: NodeJS.Timeout;
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    // Calculer la largeur totale pour le défilement infini
+    const { clientWidth, scrollWidth } = carousel;
+    const totalScrollWidth = scrollWidth / 2; // Largeur totale visible + dupliquée
 
     const startScrolling = () => {
-      if (carouselRef.current) {
-        const { scrollLeft, clientWidth, scrollWidth } = carouselRef.current;
-        const maxScrollLeft = scrollWidth - clientWidth;
+      let scrollInterval: NodeJS.Timeout;
 
-        scrollInterval = setInterval(() => {
-          carouselRef.current!.scrollBy({
+      scrollInterval = setInterval(() => {
+        if (carousel) {
+          const { scrollLeft } = carousel;
+
+          // Défilement
+          carousel.scrollBy({
             left: scrollAmount,
             behavior: "auto",
           });
 
-          // Réinitialisez la position de défilement pour un défilement continu
-          if (scrollLeft + clientWidth >= maxScrollLeft) {
-            carouselRef.current!.scrollTo({ left: 0, behavior: "auto" });
+          // Réinitialiser la position de défilement pour un défilement continu
+          if (scrollLeft >= totalScrollWidth) {
+            carousel.scrollTo({ left: 0, behavior: "auto" });
           }
-        }, scrollSpeed);
-      }
+        }
+      }, scrollSpeed);
+
+      return scrollInterval;
     };
 
-    startScrolling();
+    const interval = startScrolling();
 
     return () => {
-      if (scrollInterval) clearInterval(scrollInterval);
+      if (interval) clearInterval(interval);
     };
   }, [cards.length]);
 
@@ -45,11 +53,11 @@ const Carousel: React.FC<{ cards: string[] }> = ({ cards }) => {
         ref={carouselRef}
         style={{ display: "flex", whiteSpace: "nowrap", overflow: "hidden" }}
       >
-        <motion.div className="flex space-x-4" style={{ display: "flex" }}>
+        <div className="flex space-x-2">
           {[...cards, ...cards].map((cardSrc, index) => (
             <Card key={index} logoSrc={cardSrc} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );
