@@ -26,7 +26,7 @@
   dependencies:
     "@jridgewell/set-array" "^1.2.1"
     "@jridgewell/sourcemap-codec" "^1.4.10"
-    "@jridgewell/trace-mapping" "^0.3.24"
+    "@jridgewell/trace-mapping" "^0.3.24" 
 
 "@jridgewell/resolve-uri@^3.1.0":
   version "3.1.2"
