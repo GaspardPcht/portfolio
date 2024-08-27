@@ -1,70 +1,56 @@
-"use client"; 
+"use client";
 
-import React, { useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
-import Card from "./cards"; 
+import React, { useRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import Card from "./cards";
 
-const carouselVariants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? "100%" : "-100%",
-    opacity: 0,
-  }),
-  center: {
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction: number) => ({
-    x: direction < 0 ? "100%" : "-100%",
-    opacity: 0,
-  }),
-};
-
-interface CarouselProps {
-  cards: string[];
-}
-
-const Carousel: React.FC<CarouselProps> = ({ cards }) => {
-  const controls = useAnimation();
-  const [direction, setDirection] = React.useState(0);
+const Carousel: React.FC<{ cards: string[] }> = ({ cards }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseDown = (event: React.MouseEvent) => {
-    const startX = event.clientX;
-    const scrollLeft = carouselRef.current?.scrollLeft || 0;
+  useEffect(() => {
+    const scrollSpeed = 0.5; // Vitesse du défilement 
+    const scrollAmount = 0.5; // Distance parcourue 
+    let scrollInterval: NodeJS.Timeout;
 
-    const handleMouseMove = (event: MouseEvent) => {
+    const startScrolling = () => {
       if (carouselRef.current) {
-        const x = event.clientX - startX;
-        carouselRef.current.scrollLeft = scrollLeft - x;
+        const { scrollLeft, clientWidth, scrollWidth } = carouselRef.current;
+        const maxScrollLeft = scrollWidth - clientWidth;
+
+        scrollInterval = setInterval(() => {
+          carouselRef.current!.scrollBy({
+            left: scrollAmount,
+            behavior: "auto",
+          });
+
+          // Réinitialisez la position de défilement pour un défilement continu
+          if (scrollLeft + clientWidth >= maxScrollLeft) {
+            carouselRef.current!.scrollTo({ left: 0, behavior: "auto" });
+          }
+        }, scrollSpeed);
       }
     };
 
-    const handleMouseUp = () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    };
+    startScrolling();
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
-  };
+    return () => {
+      if (scrollInterval) clearInterval(scrollInterval);
+    };
+  }, [cards.length]);
 
   return (
-    <div
-      className="relative overflow-x-auto w-4/5 mt-[100px] mb-[100px]"
-      onMouseDown={handleMouseDown}
-      ref={carouselRef}
-    >
-      <motion.div
-        className="flex space-x-4"
-        animate={controls}
-        initial="center"
-        variants={carouselVariants}
-        custom={direction}
+    <div className="relative overflow-hidden w-full h-[200px] mt-[100px]">
+      <div
+        className="flex"
+        ref={carouselRef}
+        style={{ display: "flex", whiteSpace: "nowrap", overflow: "hidden" }}
       >
-        {cards.map((cardSrc, index) => (
-          <Card key={index} logoSrc={cardSrc} />
-        ))}
-      </motion.div>
+        <motion.div className="flex space-x-4" style={{ display: "flex" }}>
+          {[...cards, ...cards].map((cardSrc, index) => (
+            <Card key={index} logoSrc={cardSrc} />
+          ))}
+        </motion.div>
+      </div>
     </div>
   );
 };
