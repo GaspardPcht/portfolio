@@ -45,13 +45,12 @@ export default function Home() {
 
         <div
           onClick={scrollToLangues}
-          className="flex justify-center items-center absolute bottom-[30px] left-1/2 transform -translate-x-1/2 cursor-pointer"
+          className="flex justify-center items-center absolute bottom-[30px] right-[45%] transform -translate-x-1/2 cursor-pointer"
         >
           <div className="w-[30px] h-[30px] border-l-[15px] border-r-[15px] border-t-[15px] border-transparent border-t-black rotate-[-45deg] animate-bounce"></div>
         </div>
       </div>
 
-      {/* Pass the ref to Langues component */}
       <Langues ref={languesRef} />
     </div>
   );
