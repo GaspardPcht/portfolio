@@ -1,7 +1,11 @@
 import React, { forwardRef } from "react";
 import Image from "next/image";
 
-const About = forwardRef<HTMLDivElement>((props, ref) => {
+interface AboutProps {
+  
+}
+
+const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
   return (
     <div
       ref={ref}
@@ -37,6 +41,6 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
   );
 });
 
-About.displayName = "About";
+About.displayName = "About"; // Add displayName for better debugging
 
 export default About;
