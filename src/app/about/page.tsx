@@ -33,14 +33,10 @@ const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
           priority={true}
         />
       </div>
-      <div className="flex flex-col justify-center items-center absolute bottom-[30px] right-[40%] transform -translate-x-1/2 cursor-pointer animate-bounce">
-        <p>Projects</p>
-        <div className="w-[30px] h-[30px] border-l-[15px] border-r-[15px] border-t-[15px] border-transparent border-t-black hover:border-t-white"></div>
-      </div>
     </div>
   );
 });
 
-About.displayName = "About"; // Add displayName for better debugging
+About.displayName = "About"; 
 
 export default About;

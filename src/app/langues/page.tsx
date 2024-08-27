@@ -47,15 +47,6 @@ const Langues = forwardRef<HTMLDivElement, { scrollToAbout: () => void }>(
             priority={true}
           />
         </div>
-
-        {/* About me section with scroll action */}
-        <div
-          onClick={scrollToAbout}
-          className="flex flex-col justify-center items-center absolute bottom-[0px] right-[40%] transform -translate-x-1/2 cursor-pointer animate-bounce"
-        >
-          <p>About me</p>
-          <div className="w-[30px] h-[30px] border-l-[15px] border-r-[15px] border-t-[15px] border-transparent border-t-black hover:border-t-white"></div>
-        </div>
       </div>
     );
   }
