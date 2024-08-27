@@ -1,9 +1,11 @@
 "use client";
+
 import React, { useRef } from "react";
 import Header from "../../../components/header";
 import Image from "next/image";
 import Langues from "../langues/page";
 import About from "../about/page";
+import BubbleText from "../../../components/BubbleText"; // Ensure the path is correct
 
 export default function Home() {
   const languesRef = useRef<HTMLDivElement>(null);
@@ -30,12 +32,12 @@ export default function Home() {
   return (
     <div>
       <Header scrollToAbout={scrollToAbout} />
-      <div className="flex flex-col h-[90vh] w-[90vw] relative box-border">
-        <div className="flex flex-col items-start mt-[200px] ml-[200px] text-[#3C3C3C]">
+      <div className="relative flex flex-col h-[90vh] w-[90vw] box-border">
+        <div className="flex flex-col items-start mt-[200px] ml-[200px] text-[#3C3C3C] relative">
           <h1 className="mb-5 text-5xl font-bold">
             I'M{" "}
-            <span className="text-white stroke-black stroke-1">
-              GASPARDPCHT
+            <span className="text-white stroke-black stroke-1 relative z-10">
+              <BubbleText text="GASPARDPCHT" />
             </span>
           </h1>
 
