@@ -124,4 +124,17 @@ button:hover {
   @apply flex space-x-4; /* Ajoute de l'espacement entre les cartes */
   @apply whitespace-nowrap;
   @apply transition-transform duration-500 ease-in-out;
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
 }
