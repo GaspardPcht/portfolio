@@ -8,6 +8,7 @@ import About from "../about/page";
 import Projects from "../projects/page";
 import BubbleText from "../../../components/BubbleText";
 
+
 export default function Home() {
   const languesRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -107,6 +108,7 @@ export default function Home() {
       </div>
       <div ref={projectRef}> <Projects/></div>
       <div ref={contactRef}>{/* Ajoutez ici le contenu de contact */}</div>
+      
     </div>
   );
 }
