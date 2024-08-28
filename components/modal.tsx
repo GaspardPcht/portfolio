@@ -2,6 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Dispatch, SetStateAction } from "react";
 import { FaArrowLeft } from "react-icons/fa";
+import AnimatedButton from "./button"; // Assurez-vous que le chemin est correct
 
 interface ModalProps {
   isOpen: boolean;
@@ -39,7 +40,7 @@ const Modal = ({
             animate={{ scale: 1, rotate: "0deg" }}
             exit={{ scale: 0, rotate: "0deg" }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-[#CDCDCB] text-white p-6 rounded-lg w-full max-w-lg shadow-xl cursor-default relative overflow-hidden"
+            className="bg-[#979797] text-white p-6 rounded-lg w-full max-w-lg shadow-xl cursor-default relative overflow-hidden"
           >
             <div className="flex gap-2 items-center mb-4">
               <FaArrowLeft
@@ -78,14 +79,9 @@ const Modal = ({
             )}
 
             {link && (
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center text-blue-500 underline mt-6 mb-2"
-              >
-                Project
-              </a>
+              <div className="flex justify-center mt-6">
+                <AnimatedButton text="Project" href={link} />
+              </div>
             )}
           </motion.div>
         </motion.div>
