@@ -5,6 +5,7 @@ import Header from "../../../components/header";
 import Image from "next/image";
 import Langues from "../langues/page";
 import About from "../about/page";
+import Projects from "../projects/page";
 import BubbleText from "../../../components/BubbleText";
 
 export default function Home() {
@@ -104,7 +105,7 @@ export default function Home() {
       <div ref={aboutRef}>
         <About />
       </div>
-      <div ref={projectRef}>{/* Ajoutez ici le contenu du projet */}</div>
+      <div ref={projectRef}> <Projects/></div>
       <div ref={contactRef}>{/* Ajoutez ici le contenu de contact */}</div>
     </div>
   );
