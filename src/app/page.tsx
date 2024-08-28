@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import Image from "next/image";
-import Link from "next/link";
+import { motion } from "framer-motion";
 import AnimatedButton from "../../components/button";
-import BubbleText from "../../components/BubbleText";// Assurez-vous que le chemin est correct
+import BubbleText from "../../components/BubbleText";
 
 export default function StartScreen() {
   return (
@@ -12,10 +12,12 @@ export default function StartScreen() {
           <BubbleText text="GASPARDPCHT" />
         </span>
         <div className="flex gap-[30px] mr-5 items-center">
-          <a
+          <motion.a
             href="https://www.linkedin.com/in/gaspard-pauchet-348044215/"
             target="_blank"
             rel="noopener noreferrer"
+            whileHover={{ scale: 1.1, rotate: 2 }}
+            transition={{ duration: 0.3 }}
           >
             <Image
               src="/assets/icons/logo-linkedin-noir.png"
@@ -23,11 +25,13 @@ export default function StartScreen() {
               width={50}
               height={50}
             />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="https://github.com/GaspardPcht"
             target="_blank"
             rel="noopener noreferrer"
+            whileHover={{ scale: 1.1, rotate:2 }}
+            transition={{ duration: 0.3 }}
           >
             <Image
               src="/assets/icons/github.svg"
@@ -35,7 +39,7 @@ export default function StartScreen() {
               width={35}
               height={35}
             />
-          </a>
+          </motion.a>
         </div>
       </header>
       <div className="flex-1 flex items-center ml-[200px] mb-[100px]">
