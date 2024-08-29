@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import CarouselProject from "../../../components/CarouselCards";
-import Modal from "../../../components/modal";
+import Modal from "../../../components/ModalProjects";
 
 export default function Projects() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,7 +12,8 @@ export default function Projects() {
     link: "",
     frontend: "",
     backend: "",
-    functionalities:''
+    functionalities:'',
+     projetURL:''
   });
 
   const handleImageClick = (
@@ -21,9 +22,18 @@ export default function Projects() {
     link: string,
     frontend: string,
     backend: string,
-    functionalities:string,
+    functionalities: string,
+    projetURL: string
   ) => {
-    setModalContent({ title, text, link, frontend, backend, functionalities });
+    setModalContent({
+      title,
+      text,
+      link,
+      frontend,
+      backend,
+      functionalities,
+      projetURL,
+    });
     setIsModalOpen(true);
   };
 
@@ -49,6 +59,7 @@ export default function Projects() {
         frontend={modalContent.frontend}
         backend={modalContent.backend}
         functionalities={modalContent.functionalities}
+        projetURL={modalContent.projetURL}
       />
     </div>
   );

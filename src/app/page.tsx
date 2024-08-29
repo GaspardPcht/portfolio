@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedButton from "../../components/button";
+import AnimatedButton from "../../components/AnimatedButton";
 import BubbleText from "../../components/BubbleText";
 
 export default function StartScreen() {
@@ -30,7 +30,7 @@ export default function StartScreen() {
             href="https://github.com/GaspardPcht"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.1, rotate:2 }}
+            whileHover={{ scale: 1.1, rotate: 2 }}
             transition={{ duration: 0.3 }}
           >
             <Image

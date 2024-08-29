@@ -2,7 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Dispatch, SetStateAction } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import AnimatedButton from "./button"; // Assurez-vous que le chemin est correct
+import AnimatedButton from "./AnimatedButton"; // Assurez-vous que le chemin est correct
 
 interface ModalProps {
   isOpen: boolean;
@@ -13,6 +13,7 @@ interface ModalProps {
   frontend?: string;
   backend?: string;
   functionalities?: string;
+  projetURL: string;
 }
 
 const Modal = ({
@@ -24,6 +25,7 @@ const Modal = ({
   frontend,
   backend,
   functionalities,
+  projetURL,
 }: ModalProps) => {
   return (
     <AnimatePresence>
@@ -80,7 +82,7 @@ const Modal = ({
 
             {link && (
               <div className="flex justify-center mt-6">
-                <AnimatedButton text="Project" href={link} />
+                <AnimatedButton text="Project" href={projetURL} />
               </div>
             )}
           </motion.div>

@@ -8,7 +8,8 @@ type CarouselProjectProps = {
     link: string,
     frontend: string,
     backend: string,
-    functionalities: string
+    functionalities: string,
+     projetURL:string
   ) => void;
 };
 
@@ -23,7 +24,8 @@ const HorizontalScrollCarousel: React.FC<{
     link: string,
     frontend: string,
     backend: string,
-    functionalities: string
+    functionalities: string,
+     projetURL:string
   ) => void;
 }> = ({ onCardClick }) => {
   const targetRef = useRef<HTMLDivElement | null>(null);
@@ -52,9 +54,10 @@ const Card: React.FC<{
     title: string,
     text: string,
     link: string,
-    textTitle: string,
+    frontend: string,
     backend: string,
-    functionalities: string
+    functionalities: string,
+     projetURL:string
   ) => void;
 }> = ({ card, onClick }) => {
   return (
@@ -67,7 +70,8 @@ const Card: React.FC<{
           card.url,
           card.frontend,
           card.backend,
-          card.functionalities
+          card.functionalities,
+          card.projetURL
         )
       }
     >
@@ -91,6 +95,7 @@ const Card: React.FC<{
 export default CarouselProject;
 
 type CardType = {
+  projetURL: string;
   url: string;
   title: string;
   id: number;
@@ -102,6 +107,7 @@ type CardType = {
 
 const cards: CardType[] = [
   {
+    projetURL: "https://poledancewithme.wordpress.com/",
     url: "assets/image/flow.png",
     title: "FlowStudio",
     id: 1,
@@ -112,6 +118,7 @@ const cards: CardType[] = [
     text: "FlowStudio is a website for a Pole Dance studio, designed with Figma and developed with WordPress. The site features a modern interface with functionalities such as online booking, course listings, pricing details, and an overview of the studio and its team",
   },
   {
+    projetURL: "https://poledancewithme.wordpress.com/",
     url: "assets/image/dogAround.avif",
     title: "Dog Around",
     id: 2,
@@ -122,6 +129,7 @@ const cards: CardType[] = [
     text: "Dog Around is an innovative mobile app designed to enhance dog-walking experiences worldwide. It features an intuitive interface, advanced geolocation, a custom integrated chat for seamless communication, and options to personalize and update user and dog profiles.",
   },
   {
+    projetURL: "https://poledancewithme.wordpress.com/",
     url: "assets/image/twitter.avif",
     title: "HackaTweet",
     id: 6,
@@ -131,6 +139,7 @@ const cards: CardType[] = [
     text: "HackaTweet is a dynamic web application inspired by Twitter, developed with React and Next.js. It features account creation, the ability to post tweets, and support for hashtags, all powered by a robust backend using Express.js, Node.js, and Mongoose for database management.",
   },
   {
+    projetURL: "https://poledancewithme.wordpress.com/",
     url: "assets/image/weather.avif",
     title: "WeatherApp",
     id: 7,
@@ -142,6 +151,7 @@ const cards: CardType[] = [
   },
 
   {
+    projetURL: "https://poledancewithme.wordpress.com/",
     url: "assets/image/newYorkTimes.avif",
     title: "Morning News",
     id: 4,
@@ -151,6 +161,7 @@ const cards: CardType[] = [
     text: "Morning News is a comprehensive web application designed for news enthusiasts. Developed with React, Redux, and Next.js, it allows users to read articles, create accounts, and add articles to their favorites. The app is powered by a Node.js and Express.js backend, with Mongoose managing the database and Jest used for testing. It also integrates with the NEWAPI to deliver up-to-date news content.",
   },
   {
+    projetURL: "https://poledancewithme.wordpress.com/",
     url: "assets/image/train.avif",
     title: "TicketHack",
     id: 5,
@@ -161,6 +172,7 @@ const cards: CardType[] = [
     text: "TicketHack is a web application designed for train ticket reservations. Developed with Vanilla JavaScript, HTML, and CSS, it allows users to create accounts, search for train routes, add tickets to their cart, and complete payments. The backend is powered by Node.js, Express.js, and Mongoose, ensuring secure and efficient handling of user data and transactions.",
   },
   {
+    projetURL: "https://poledancewithme.wordpress.com/",
     url: "assets/image/cinema.avif",
     title: "Movies",
     id: 3,

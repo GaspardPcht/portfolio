@@ -8,7 +8,7 @@ interface CardProps {
   logoSrc: string;
 }
 
-const Card: React.FC<CardProps> = ({ logoSrc }) => {
+const CardsLanguages: React.FC<CardProps> = ({ logoSrc }) => {
   return (
     <div className="flex-shrink-0 items-center content-center bg-[#FEFEFE] rounded-3xl border shadow-lg">
       <Image
@@ -22,4 +22,4 @@ const Card: React.FC<CardProps> = ({ logoSrc }) => {
   );
 };
 
-export default Card;
+export default CardsLanguages;

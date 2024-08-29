@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import Header from "../../../components/header";
+import Header from "../../../components/Header";
 import Image from "next/image";
 import Langues from "../langues/page";
 import About from "../about/page";

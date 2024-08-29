@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
-import Card from "./cards";
+import CardsLanguages from "./cardsLanguages";
 
 const Carousel: React.FC<{ cards: string[] }> = ({ cards }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -55,7 +55,7 @@ const Carousel: React.FC<{ cards: string[] }> = ({ cards }) => {
       >
         <div className="flex space-x-2">
           {[...cards, ...cards].map((cardSrc, index) => (
-            <Card key={index} logoSrc={cardSrc} />
+            <CardsLanguages key={index} logoSrc={cardSrc} />
           ))}
         </div>
       </div>

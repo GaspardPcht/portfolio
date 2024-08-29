@@ -58,7 +58,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ text, href }) => {
 
   const handleClick = () => {
     if (href) {
-      router.push(href);
+      window.open(href, "_blank"); 
     }
   };
 
