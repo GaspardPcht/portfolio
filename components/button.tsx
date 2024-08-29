@@ -66,7 +66,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ text, href }) => {
     <motion.button
       whileTap={{ scale: 0.985 }}
       ref={btnRef}
-      className="relative w-full max-w-xs overflow-hidden rounded-lg bg-[#3C3C3C] px-4 py-3 text-lg font-medium text-white hover:bg-[#3C3C3C]"
+      className="group relative w-full max-w-xs overflow-hidden rounded-lg bg-[#3C3C3C] px-4 py-3 text-lg font-medium text-white hover:bg-[#3C3C3C]"
       onClick={handleClick}
     >
       <span className="pointer-events-none relative z-10 mix-blend-difference decoration-[#3C3C3C]">
@@ -74,7 +74,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ text, href }) => {
       </span>
       <span
         ref={spanRef}
-        className="pointer-events-none absolute left-[50%] top-[50%] h-16 w-16 -translate-x-[50%] -translate-y-[50%] rounded-full bg-slate-100"
+        className="pointer-events-none absolute opacity-0 group-hover:opacity-100 left-[50%] top-[50%] h-14 w-14 -translate-x-[50%] -translate-y-[50%] rounded-full bg-slate-100"
       />
     </motion.button>
   );
