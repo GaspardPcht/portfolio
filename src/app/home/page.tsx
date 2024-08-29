@@ -7,6 +7,7 @@ import Langues from "../langues/page";
 import About from "../about/page";
 import Projects from "../projects/page";
 import BubbleText from "../../../components/BubbleText";
+import Contact from "../contact/page";
 
 
 export default function Home() {
@@ -106,9 +107,12 @@ export default function Home() {
       <div ref={aboutRef}>
         <About />
       </div>
-      <div ref={projectRef}> <Projects/></div>
-      <div ref={contactRef}>{/* Ajoutez ici le contenu de contact */}</div>
-      
+      <div ref={projectRef} className="relative min-h-screen ">
+        <Projects />
+      </div>
+      <div ref={contactRef} className="relative min-h-screen">
+        <Contact />
+      </div>
     </div>
   );
 }

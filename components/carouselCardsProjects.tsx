@@ -25,7 +25,7 @@ const HorizontalScrollCarousel: React.FC<{
     frontend: string,
     backend: string,
     functionalities: string,
-     projetURL:string
+    projetURL: string
   ) => void;
 }> = ({ onCardClick }) => {
   const targetRef = useRef<HTMLDivElement | null>(null);
@@ -33,11 +33,12 @@ const HorizontalScrollCarousel: React.FC<{
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-86%"]);
+
+const x = useTransform(scrollYProgress, [0, 1], ["1%", "-84%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-[#DFDEDC]">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+      <div className="sticky top-0 flex h-[90vh] w-[90vw] items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4">
           {cards.map((card) => (
             <Card key={card.id} card={card} onClick={onCardClick} />
@@ -117,17 +118,17 @@ const cards: CardType[] = [
       "Online booking, Course listings, Pricing lists, Studio and team presentation",
     text: "FlowStudio is a website for a Pole Dance studio, designed with Figma and developed with WordPress. The site features a modern interface with functionalities such as online booking, course listings, pricing details, and an overview of the studio and its team",
   },
-  {
-    projetURL: "https://poledancewithme.wordpress.com/",
-    url: "assets/image/dogAround.avif",
-    title: "Dog Around",
-    id: 2,
-    frontend: "React Native, Redux Persist",
-    backend: "Express.js, Node.js, Mongoose",
-    functionalities:
-      "Global dog-walking planning, Integrated chat, Profile customization",
-    text: "Dog Around is an innovative mobile app designed to enhance dog-walking experiences worldwide. It features an intuitive interface, advanced geolocation, a custom integrated chat for seamless communication, and options to personalize and update user and dog profiles.",
-  },
+  // {
+  //   projetURL: "https://poledancewithme.wordpress.com/",
+  //   url: "assets/image/dogAround.avif",
+  //   title: "Dog Around",
+  //   id: 2,
+  //   frontend: "React Native, Redux Persist",
+  //   backend: "Express.js, Node.js, Mongoose",
+  //   functionalities:
+  //     "Global dog-walking planning, Integrated chat, Profile customization",
+  //   text: "Dog Around is an innovative mobile app designed to enhance dog-walking experiences worldwide. It features an intuitive interface, advanced geolocation, a custom integrated chat for seamless communication, and options to personalize and update user and dog profiles.",
+  // },
   {
     projetURL: "https://hacka-tweet-front.vercel.app/",
     url: "assets/image/twitter.avif",
@@ -139,7 +140,7 @@ const cards: CardType[] = [
     text: "HackaTweet is a dynamic web application inspired by Twitter, developed with React and Next.js. It features account creation, the ability to post tweets, and support for hashtags, all powered by a robust backend using Express.js, Node.js, and Mongoose for database management.",
   },
   {
-    projetURL: "https://poledancewithme.wordpress.com/",
+    projetURL: "https://weather-front-six.vercel.app/",
     url: "assets/image/weather.avif",
     title: "WeatherApp",
     id: 7,
@@ -151,7 +152,7 @@ const cards: CardType[] = [
   },
 
   {
-    projetURL: "https://poledancewithme.wordpress.com/",
+    projetURL: "https://morning-news-front-beige.vercel.app/",
     url: "assets/image/newYorkTimes.avif",
     title: "Morning News",
     id: 4,
