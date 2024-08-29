@@ -1,7 +1,7 @@
 // pages/projects.tsx
 import { motion } from "framer-motion";
 import { useState } from "react";
-import CarouselProject from "../../../components/CarouselCards";
+import CarouselProject from "../../../components/CarouselCardsProjects";
 import Modal from "../../../components/ModalProjects";
 
 export default function Projects() {

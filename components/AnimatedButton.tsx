@@ -40,7 +40,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ text, href }) => {
       if (!span) return;
 
       cancelAnimationFrame(requestId);
-      requestId = requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
         span.style.transition = "left 0.25s ease";
         span.style.left = "50%";
       });
@@ -58,7 +58,12 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ text, href }) => {
 
   const handleClick = () => {
     if (href) {
-      window.open(href, "_blank"); 
+      // Handle internal routing
+      if (href.startsWith("http")) {
+        window.open(href, "_blank");
+      } else {
+        router.push(href);
+      }
     }
   };
 

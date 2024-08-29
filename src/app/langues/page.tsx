@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import { motion } from "framer-motion";
-import Carousel from "../../../components/carouselCardsProjects";
+import Carousel from "../../../components/carouselCardsLanguages";
 import Image from "next/image";
 
 const cardSources = [
