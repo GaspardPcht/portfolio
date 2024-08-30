@@ -1,8 +1,8 @@
-// pages/projects.tsx
 import { motion } from "framer-motion";
 import { useState } from "react";
 import CarouselProject from "../../../components/CarouselCardsProjects";
 import Modal from "../../../components/ModalProjects";
+import { useInView } from "react-intersection-observer";
 
 export default function Projects() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,8 +12,8 @@ export default function Projects() {
     link: "",
     frontend: "",
     backend: "",
-    functionalities:'',
-     projetURL:''
+    functionalities: "",
+    projetURL: "",
   });
 
   const handleImageClick = (
@@ -37,16 +37,22 @@ export default function Projects() {
     setIsModalOpen(true);
   };
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <div className="flex flex-col h-screen w-[90vw] box-border relative">
-      <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        className="flex flex-col items-start text-[#3C3C3C] mt-[100px] ml-[60%]"
-      >
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -100 }}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      className="flex flex-col h-screen w-[90vw] box-border relative"
+    >
+      <div className="flex flex-col items-start text-[#3C3C3C] mt-[100px] ml-[60%]">
         <h1 className="text-4xl font-bold">PROJECTS</h1>
-      </motion.div>
+      </div>
       <div>
         <CarouselProject onCardClick={handleImageClick} />
       </div>
@@ -61,6 +67,6 @@ export default function Projects() {
         functionalities={modalContent.functionalities}
         projetURL={modalContent.projetURL}
       />
-    </div>
+    </motion.div>
   );
 }
