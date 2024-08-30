@@ -71,7 +71,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ text, href }) => {
     <motion.button
       whileTap={{ scale: 0.985 }}
       ref={btnRef}
-      className="group relative w-full max-w-xs overflow-hidden rounded-lg bg-[#3C3C3C] px-4 py-3 text-lg font-medium text-white hover:bg-[#3C3C3C]"
+      className="group relative w-full max-w-xs overflow-hidden rounded-xl bg-[#3C3C3C] px-4 py-3 text-lg font-medium text-white hover:bg-[#3C3C3C]"
       onClick={handleClick}
     >
       <span className="pointer-events-none relative z-10 mix-blend-difference decoration-[#3C3C3C]">

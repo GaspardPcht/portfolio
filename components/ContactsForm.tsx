@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import ButtonArrow from "./ButtonArrow";
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -7,7 +8,7 @@ const ContactForm: React.FC = () => {
     email: "",
     message: "",
   });
-  const [successMessage, setSuccessMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -21,20 +22,20 @@ const ContactForm: React.FC = () => {
     emailjs
       .send(
         "service_fieger5",
-        "template_vu7u33y", 
+        "template_vu7u33y",
         formData,
-        "a04RyuWoXUIMeDNPc" 
+        "a04RyuWoXUIMeDNPc"
       )
       .then(
         (result) => {
           console.log(result.text);
-          setSuccessMessage("Votre message a été envoyé avec succès !");
+          setSuccessMessage("Your message has been sent successfully!");
           setFormData({ name: "", email: "", message: "" });
         },
         (error) => {
           console.error(error.text);
           setSuccessMessage(
-            "Erreur lors de l'envoi du message. Veuillez réessayer plus tard."
+            "There was an error sending your message. Please try again later."
           );
         }
       );
@@ -43,14 +44,14 @@ const ContactForm: React.FC = () => {
   return (
     <form
       onSubmit={sendEmail}
-      className="w-full h-[90vh] max-w-lg mx-auto mt-8 p-4"
+      className="w-full max-w-lg mx-auto mt-[100px] p-4 bg-white shadow-lg rounded-lg"
     >
       <div className="mb-4">
         <label
           className="block text-gray-700 text-sm font-bold mb-2"
           htmlFor="name"
         >
-          Nom
+          Name
         </label>
         <input
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -95,16 +96,11 @@ const ContactForm: React.FC = () => {
           required
         />
       </div>
-      <div className="flex items-center justify-between">
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
-        >
-          Envoyer
-        </button>
+      <div className="flex justify-center mb-4">
+        <ButtonArrow text="Submit" href="#"/>
       </div>
       {successMessage && (
-        <p className="text-green-500 text-xs italic mt-4">{successMessage}</p>
+        <p className="text-red-500 text-xs italic mt-4">{successMessage}</p>
       )}
     </form>
   );

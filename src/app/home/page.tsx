@@ -107,10 +107,10 @@ export default function Home() {
       <div ref={aboutRef}>
         <About />
       </div>
-      <div ref={projectRef} className="relative min-h-screen ">
+      <div ref={projectRef} className="relative ">
         <Projects />
       </div>
-      <div ref={contactRef} className="relative min-h-screen">
+      <div ref={contactRef} className=" relative flex mt-[1000px]">
         <Contact />
       </div>
     </div>

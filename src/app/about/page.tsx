@@ -14,7 +14,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5, duration: 0.5 }}
-        className="flex flex-col items-start text-[#3C3C3C] mt-[100px] mb-[100px] ml-[30%]"
+        className="flex flex-col items-start text-[#3C3C3C] mt-[100px] mb-[100px] ml-[40%]"
       >
         <h1 className="text-4xl font-bold">ABOUT ME</h1>
       </motion.div>

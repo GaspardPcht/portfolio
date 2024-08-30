@@ -2,7 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Dispatch, SetStateAction } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import AnimatedButton from "./AnimatedButton"; // Assurez-vous que le chemin est correct
+import ButtonArrow from "./ButtonArrow";// Assurez-vous que le chemin est correct
 
 interface ModalProps {
   isOpen: boolean;
@@ -82,7 +82,7 @@ const Modal = ({
 
             {link && (
               <div className="flex justify-center mt-6">
-                <AnimatedButton text="Project" href={projetURL} />
+                <ButtonArrow text="Project" href={projetURL} />
               </div>
             )}
           </motion.div>
