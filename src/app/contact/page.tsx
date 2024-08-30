@@ -58,7 +58,7 @@ export default function Contact() {
           width={200}
           height={200}
           priority={true}
-          className="opacity-0 mb:opacity-100" 
+          className="opacity-0 md:opacity-100" 
         />
       </motion.div>
     </div>
