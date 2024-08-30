@@ -18,7 +18,7 @@ export default function Header({
     <div className="flex items-center justify-between ml-8 p-6 border-b border-gray-300">
       <div className="flex items-center gap-[80px] text-black">
         <motion.span
-          className="text-2xl font-bold font-[League Spartan] text-black stroke-black stroke-1 relative z-10"
+          className="text-xl font-bold font-[League Spartan] text-black stroke-black stroke-1 relative z-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

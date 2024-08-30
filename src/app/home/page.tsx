@@ -99,7 +99,7 @@ export default function Home() {
           className="flex flex-col justify-center items-center absolute bottom-[30px] right-[40%] transform -translate-x-1/2 cursor-pointer animate-bounce bg-transparent border-none hover:bg-transparent text-black "
           aria-label="Scroll to Langues section"
         >
-          <p>Learn more</p>
+     
           <div className="text-3xl">
             <RxDoubleArrowDown />
           </div>
