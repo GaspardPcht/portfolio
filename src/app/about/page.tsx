@@ -41,7 +41,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: textInView ? 1 : 0, scale: textInView ? 1 : 0.8 }}
         transition={{ delay: 0.7, duration: 0.5 }}
-        className="bg-[#CDCDCB] text-center flex items-center justify-center absolute mt-[300px] right-[10%] w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] p-6 rounded-xl shadow-lg"
+        className="bg-[#CDCDCB] text-center flex items-center justify-center absolute mt-[300px] right-[3%] w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] p-6 rounded-xl shadow-lg"
       >
         <p className="text-lg mt-3">
           I am a 23-year-old web and mobile developer based in France.
@@ -58,7 +58,24 @@ const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: imageInView ? 1 : 0, y: imageInView ? 0 : 50 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-0 left-[90px] transform translate-x-[10%]"
+        className="absolute bottom-[25%] left-[200px] transform translate-x-[10%]"
+      >
+        <Image
+          src="/assets/image/me.jpg"
+          alt="Image de Memoji saluant"
+          width={300}
+          height={300}
+          priority={true}
+          className="rounded-xl"
+        />
+      </motion.div>
+
+      <motion.div
+        ref={imageRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: imageInView ? 1 : 0, y: imageInView ? 0 : 50 }}
+        transition={{ delay: 1, duration: 0.5 }}
+        className="absolute bottom-0 left-[45%] transform translate-x-[10%]"
       >
         <Image
           src="/assets/memoji/zen.png"

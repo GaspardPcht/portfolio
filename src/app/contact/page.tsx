@@ -6,8 +6,8 @@ import { useInView } from "react-intersection-observer";
 
 export default function Contact() {
   const { ref: headerRef, inView: headerInView } = useInView({
-    triggerOnce: true, // Animation déclenchée une seule fois
-    threshold: 0.1, // Déclenchement lorsque 10% de l'élément est visible
+    triggerOnce: true,
+    threshold: 0.1,
   });
 
   const { ref: contentRef, inView: contentInView } = useInView({
@@ -34,7 +34,7 @@ export default function Contact() {
         transition={{ delay: 0.5, duration: 0.5 }}
         className="flex flex-col lg:flex-row mt-[50px] gap-6"
       >
-        <div className="bg-[#CDCDCB] p-6 rounded-xl shadow-lg max-w-md lg:max-w-lg max-h-[140px] overflow-auto flex-1 ml-4">
+        <div className="bg-[#CDCDCB] p-6 rounded-xl shadow-lg max-w-md lg:max-w-lg max-h-[140px] overflow-auto flex-1 ml-10">
           <p className="text-lg text-black">
             I would be delighted to discuss your projects or answer any
             questions you may have. Feel free to get in touch!
