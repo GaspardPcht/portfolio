@@ -7,7 +7,7 @@ import BubbleText from "../../components/BubbleText";
 export default function StartScreen() {
   return (
     <div className="flex flex-col h-screen p-1 box-border relative">
-      <header className="flex items-center justify-between ml-8 mb-16 p-5">
+      <header className="flex items-center justify-between ml-8 mb-16 p-6">
         <span className="text-xl font-bold font-[League Spartan] text-black stroke-black stroke-1 relative z-10">
           <BubbleText text="GASPARDPCHT" />
         </span>
