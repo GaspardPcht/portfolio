@@ -29,7 +29,7 @@ export default function Header({
           <BubbleText text="GASPARDPCHT" />
         </motion.span>
         <button
-          className="md:hidden hover:bg-transparent text-3xl text-black ml-[170px] relative z-20"
+          className="md:hidden hover:bg-transparent text-3xl text-black ml-[160px] relative z-20"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle Menu"
         >

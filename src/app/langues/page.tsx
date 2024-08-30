@@ -42,7 +42,7 @@ const Langues = forwardRef<HTMLDivElement, { scrollToAbout: () => void }>(
     return (
       <div
         ref={ref}
-        className="flex flex-col h-screen w-[90vw] box-border relative"
+        className="flex flex-col h-screen md:w-[90vw] box-border relative"
       >
         <motion.div
           ref={headerRef}
@@ -62,7 +62,8 @@ const Langues = forwardRef<HTMLDivElement, { scrollToAbout: () => void }>(
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: textInView ? 1 : 0, scale: textInView ? 1 : 0.8 }}
           transition={{ delay: 0.7, duration: 0.5 }}
-          className="bg-[#CDCDCB] text-center flex items-center justify-center absolute mt-[200px] right-[-5%] w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] p-6 rounded-xl shadow-lg"
+          className="bg-[#CDCDCB] text-center flex-col flex items-center justify-center absolute mt-[200px] md:right-[-1%] w-[90%]
+          lg:w-[60%] p-6 rounded-xl shadow-lg ml-[68px]"
         >
           <p className="text-lg mt-3">
             I am skilled in modern web and mobile technologies including React,
@@ -79,7 +80,7 @@ const Langues = forwardRef<HTMLDivElement, { scrollToAbout: () => void }>(
             y: carouselInView ? 0 : 50,
           }}
           transition={{ delay: 1, duration: 0.5 }}
-          className="carousel mt-[220px] gap-6 mr-[80px] ml-[200px]"
+          className="carousel ml-[85px] md:mt-[220px] mt-[300px] gap-6 md:mr-[80px] md:ml-[200px]"
         >
           <Carousel cards={cardSources} />
         </motion.div>
@@ -89,7 +90,7 @@ const Langues = forwardRef<HTMLDivElement, { scrollToAbout: () => void }>(
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: imageInView ? 1 : 0, y: imageInView ? 0 : 50 }}
           transition={{ delay: 1.2, duration: 0.5 }}
-          className="absolute bottom-0 right-[-90px] transform translate-x-[10%]"
+          className="absolute md:bottom-0 -bottom-[15vh] right-[-90px] transform translate-x-[10%]"
         >
           <Image
             src="/assets/memoji/delicious.png"

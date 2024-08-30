@@ -32,16 +32,16 @@ export default function Contact() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: contentInView ? 1 : 0, y: contentInView ? 0 : 50 }}
         transition={{ delay: 0.5, duration: 0.5 }}
-        className="flex flex-col lg:flex-row mt-[50px] gap-6"
+        className="flex flex-col lg:flex-row md:mt-[50px] md:gap-6 "
       >
-        <div className="bg-[#CDCDCB] p-6 rounded-xl shadow-lg max-w-md lg:max-w-lg max-h-[140px] overflow-auto flex-1 ml-10">
+        <div className="bg-[#CDCDCB] p-6 rounded-xl shadow-lg max-w-md lg:max-w-lg md:max-h-[140px] opacity-0 md:opacity-100 overflow-auto flex-1 ml-10">
           <p className="text-lg text-black">
             I would be delighted to discuss your projects or answer any
             questions you may have. Feel free to get in touch!
           </p>
         </div>
 
-        <div className="flex-1">
+        <div className="md:flex-1 ml-[100px] md:ml-0 mb-56 md:mb-0">
           <ContactForm />
         </div>
       </motion.div>
@@ -50,7 +50,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-0 left-[90px] transform translate-x-[10%]"
+        className="absolute md:bottom-0  left-[90px] transform translate-x-[10%]"
       >
         <Image
           src="/assets/memoji/thumb.png"
@@ -58,6 +58,7 @@ export default function Contact() {
           width={200}
           height={200}
           priority={true}
+          className="opacity-0 mb:opacity-100" 
         />
       </motion.div>
     </div>

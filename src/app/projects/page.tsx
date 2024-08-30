@@ -50,7 +50,7 @@ export default function Projects() {
       transition={{ delay: 0.5, duration: 0.5 }}
       className="flex flex-col h-screen w-[90vw] box-border relative"
     >
-      <div className="flex flex-col items-start text-[#3C3C3C] mt-[100px] ml-[60%]">
+      <div className="flex flex-col items-start text-[#3C3C3C] mt-[250px] md:mt-[100px] ml-[60%]">
         <h1 className="text-4xl font-bold">PROJECTS</h1>
       </div>
       <div>

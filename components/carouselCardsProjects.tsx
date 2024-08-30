@@ -34,18 +34,21 @@ const HorizontalScrollCarousel: React.FC<{
   });
 
 
-const x = useTransform(scrollYProgress, [0, 1], ["1%", "-45%"]);
+const x = useTransform(scrollYProgress, [0, 1], ["1%", "-40%"]);
 
   return (
     <section ref={targetRef} className="relative h-[200vh] bg-[#DFDEDC]">
-  <div className="sticky top-0 h-[90vh] w-screen flex items-center overflow-hidden">
-    <motion.div style={{ x }} className="flex gap-4">
-      {cards.map((card) => (
-        <Card key={card.id} card={card} onClick={onCardClick} />
-      ))}
-    </motion.div>
-  </div>
-</section>
+      <div className="sticky top-0 h-[90vh] w-screen flex items-center overflow-hidden">
+        <motion.div
+          style={{ x }}
+          className="flex gap-4 "
+        >
+          {cards.map((card) => (
+            <Card key={card.id} card={card} onClick={onCardClick} />
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
