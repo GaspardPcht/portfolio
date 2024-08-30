@@ -34,7 +34,7 @@ const HorizontalScrollCarousel: React.FC<{
   });
 
 
-const x = useTransform(scrollYProgress, [0, 1], ["1%", "-84%"]);
+const x = useTransform(scrollYProgress, [0, 1], ["1%", "-45%"]);
 
   return (
     <section ref={targetRef} className="relative h-[200vh] bg-[#DFDEDC]">
@@ -63,7 +63,7 @@ const Card: React.FC<{
 }> = ({ card, onClick }) => {
   return (
     <div
-      className="group relative h-[400px] w-[400px] overflow-hidden bg-neutral-500 rounded-2xl cursor-pointer"
+      className="group relative h-[400px] w-[400px] overflow-hidden bg-neutral-500 rounded-xl cursor-pointer"
       onClick={() =>
         onClick(
           card.title,

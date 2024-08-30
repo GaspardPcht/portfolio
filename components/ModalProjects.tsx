@@ -42,12 +42,12 @@ const Modal = ({
             animate={{ scale: 1, rotate: "0deg" }}
             exit={{ scale: 0, rotate: "0deg" }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-[#979797] text-white p-6 rounded-lg w-full max-w-lg shadow-xl cursor-default relative overflow-hidden"
+            className="bg-[#CDCDCB] text-black p-6 rounded-lg w-full max-w-lg shadow-xl cursor-default relative overflow-hidden"
           >
             <div className="flex gap-2 items-center mb-4">
               <FaArrowLeft
                 onClick={() => setIsOpen(false)}
-                className="text-white text-xl hover:text-gray-400 cursor-pointer transition-colors"
+                className="text-black text-xl hover:text-gray-400 cursor-pointer transition-colors"
               />
             </div>
 

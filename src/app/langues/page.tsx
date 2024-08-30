@@ -36,7 +36,7 @@ const Langues = forwardRef<HTMLDivElement, { scrollToAbout: () => void }>(
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.7, duration: 0.5 }}
-          className="bg-[#CDCDCB] p-2 text-center flex items-center justify-center absolute mt-[200px] right-[-5%] rounded-[20px] w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%]"
+          className="bg-[#CDCDCB] text-center flex items-center justify-center absolute mt-[200px] right-[-5%] w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] p-6 rounded-xl shadow-lg"
         >
           <p className="text-lg mt-3">
             I am skilled in modern web and mobile technologies including React,

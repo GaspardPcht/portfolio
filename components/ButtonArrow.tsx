@@ -4,9 +4,10 @@ import { useRouter } from "next/navigation";
 interface ButtonArrowProps {
   text: string;
   href: string;
+  type?: "button" | "submit";
 }
 
-const ButtonArrow: React.FC<ButtonArrowProps> = ({ text, href }) => {
+const ButtonArrow: React.FC<ButtonArrowProps> = ({ text, href, type }) => {
     const router = useRouter();
 
   const handleClick = () => {

@@ -8,7 +8,7 @@ const ContactForm: React.FC = () => {
     email: "",
     message: "",
   });
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [message, setMessage] = useState<{ text: string; type: 'success' | 'error' } | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -21,22 +21,24 @@ const ContactForm: React.FC = () => {
 
     emailjs
       .send(
-        "service_fieger5",
-        "template_vu7u33y",
-        formData,
-        "a04RyuWoXUIMeDNPc"
+        "service_e6r5l34", // Remplacez par votre service ID
+        "template_vu7u33y", // Remplacez par votre template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        "a04RyuWoXUIMeDNPc" // Remplacez par votre user ID
       )
       .then(
         (result) => {
           console.log(result.text);
-          setSuccessMessage("Your message has been sent successfully!");
+          setMessage({ text: "Your message has been sent successfully! 😀", type: 'success' });
           setFormData({ name: "", email: "", message: "" });
         },
         (error) => {
           console.error(error.text);
-          setSuccessMessage(
-            "There was an error sending your message. Please try again later."
-          );
+          setMessage({ text: "There was an error sending your message. Please try again later 😢", type: 'error' });
         }
       );
   };
@@ -44,7 +46,7 @@ const ContactForm: React.FC = () => {
   return (
     <form
       onSubmit={sendEmail}
-      className="w-full max-w-lg mx-auto mt-[100px] p-4 bg-white shadow-lg rounded-lg"
+      className="w-full max-w-lg mx-auto mt-[40px] bg-[#CDCDCB] p-4 shadow-lg rounded-lg"
     >
       <div className="mb-4">
         <label
@@ -88,7 +90,7 @@ const ContactForm: React.FC = () => {
           Message
         </label>
         <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outlin resize-none h-48"
           id="message"
           name="message"
           value={formData.message}
@@ -96,11 +98,20 @@ const ContactForm: React.FC = () => {
           required
         />
       </div>
-      <div className="flex justify-center mb-4">
-        <ButtonArrow text="Submit" href="#"/>
+      <div
+        className="flex justify-center mb-4 cursor-pointer"
+        onClick={sendEmail}
+      >
+        <ButtonArrow text="Submit" href="" />
       </div>
-      {successMessage && (
-        <p className="text-red-500 text-xs italic mt-4">{successMessage}</p>
+      {message && (
+        <p
+          className={`text-xs mt-4 text-center ${
+            message.type === "success" ? "text-green-500" : "text-red-500"
+          }`}
+        >
+          {message.text}
+        </p>
       )}
     </form>
   );
