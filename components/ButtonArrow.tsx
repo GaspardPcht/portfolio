@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/navigation";
 
 interface ButtonArrowProps {
   text: string;
@@ -6,11 +7,25 @@ interface ButtonArrowProps {
 }
 
 const ButtonArrow: React.FC<ButtonArrowProps> = ({ text, href }) => {
+    const router = useRouter();
+
+  const handleClick = () => {
+    if (href) {
+      // Handle internal routing
+      if (href.startsWith("http")) {
+        window.open(href, "_blank");
+      } else {
+        router.push(href);
+      }
+    }
+  };
+
   return (
     <div>
       <a
-        href={href}
+
         className="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-[#3C3C3C] border-2 border-[#3C3C3C] rounded-xl hover:text-white group hover:bg-[#3C3C3C]"
+        onClick={handleClick}
       >
         <span className="absolute left-0 block w-full h-0 transition-all bg-[#3C3C3C] opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
         <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">

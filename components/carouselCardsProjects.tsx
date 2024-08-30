@@ -46,7 +46,6 @@ const x = useTransform(scrollYProgress, [0, 1], ["1%", "-84%"]);
     </motion.div>
   </div>
 </section>
-
   );
 };
 
