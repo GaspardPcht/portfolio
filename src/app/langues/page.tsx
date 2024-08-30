@@ -6,7 +6,7 @@ import Image from "next/image";
 const cardSources = [
   "/assets/icons/react.png",
   "/assets/icons/JavaScript.png",
-  "/assets/icons/typeScript.png",
+  "/assets/icons/type.png",
   "/assets/icons/native.png",
   "/assets/icons/next.png",
   "/assets/icons/node.png",

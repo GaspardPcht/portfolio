@@ -8,6 +8,8 @@ import About from "../about/page";
 import Projects from "../projects/page";
 import BubbleText from "../../../components/BubbleText";
 import Contact from "../contact/page";
+import { RxDoubleArrowDown } from "react-icons/rx";
+
 
 
 export default function Home() {
@@ -98,7 +100,9 @@ export default function Home() {
           aria-label="Scroll to Langues section"
         >
           <p>Learn more</p>
-          <div className="w-[30px] h-[30px] border-l-[15px] border-r-[15px] border-t-[15px] border-transparent bg-transparent border-t-black hover:border-t-white"></div>
+          <div className="text-3xl">
+            <RxDoubleArrowDown />
+          </div>
         </button>
       </div>
       <div ref={languesRef}>

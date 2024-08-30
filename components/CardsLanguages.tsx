@@ -10,7 +10,7 @@ interface CardProps {
 
 const CardsLanguages: React.FC<CardProps> = ({ logoSrc }) => {
   return (
-    <div className="flex-shrink-0 items-center content-center bg-[#FEFEFE] rounded-xl border shadow-lg">
+    <div className="flex-shrink-0 items-center content-center bg-[#FEFEFE] rounded-2xl shadow-lg">
       <Image
         src={logoSrc}
         alt="Technology logo"

@@ -28,7 +28,7 @@ export default function Header({
         <div className="flex gap-[100px] font-semibold text-[#3C3C3C]">
           <motion.span
             onClick={scrollToAbout}
-            className="cursor-pointer relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+            className="cursor-pointer relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#3C3C3C] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -37,7 +37,7 @@ export default function Header({
           </motion.span>
           <motion.span
             onClick={scrollToProject}
-            className="cursor-pointer relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+            className="cursor-pointer relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#3C3C3C] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -46,7 +46,7 @@ export default function Header({
           </motion.span>
           <motion.span
             onClick={scrollToContact}
-            className="cursor-pointer relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+            className="cursor-pointer relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#3C3C3C] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -60,7 +60,7 @@ export default function Header({
           href="https://www.linkedin.com/in/gaspard-pauchet-348044215/"
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.1, rotate:2 }}
+          whileHover={{ scale: 1.1, rotate: 2 }}
           transition={{ duration: 0.3 }}
         >
           <Image
@@ -74,7 +74,7 @@ export default function Header({
           href="https://github.com/GaspardPcht"
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.1, rotate:2}}
+          whileHover={{ scale: 1.1, rotate: 2 }}
           transition={{ duration: 0.3 }}
         >
           <Image
