@@ -8,7 +8,7 @@ export default function StartScreen() {
   return (
     <div className="flex flex-col h-screen p-1 box-border relative">
       <header className="flex items-center justify-between ml-8 mb-16 p-6">
-        <span className="text-xl font-bold font-[League Spartan] text-black stroke-black stroke-1 relative z-10">
+        <span className="md:text-xl text-2xl mr-11 md:mr-0 font-bold font-[League Spartan] text-black stroke-black stroke-1 relative z-10">
           <BubbleText text="GASPARDPCHT" />
         </span>
         <div className="flex gap-[30px] mr-5 items-center">
@@ -42,7 +42,7 @@ export default function StartScreen() {
           </motion.a>
         </div>
       </header>
-      <div className="flex-1 flex items-center ml-[200px] mb-[100px]">
+      <div className="flex-1 flex items-center md:ml-[200px] mb-[100px]">
         <h1 className="text-5xl font-bold text-[#3C3C3C]">
           <span>HEY THERE!</span>
           <br />
@@ -57,7 +57,7 @@ export default function StartScreen() {
           height={30}
         />
       </div>
-      <div className="flex justify-end mr-[200px] mb-[100px] mt-5">
+      <div className="flex md:justify-end justify-center md:mr-[200px] mb-[100px] mt-5">
         <AnimatedButton text="START" href="/home" />
       </div>
     </div>

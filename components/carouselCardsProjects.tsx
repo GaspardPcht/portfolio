@@ -1,5 +1,5 @@
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 type CarouselProjectProps = {
   onCardClick: (
@@ -9,12 +9,34 @@ type CarouselProjectProps = {
     frontend: string,
     backend: string,
     functionalities: string,
-     projetURL:string
+    projetURL: string
   ) => void;
 };
 
+function useMediaQuery(query: string) {
+  const [matches, setMatches] = useState<boolean>(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+    const listener = () => setMatches(media.matches);
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, [matches, query]);
+
+  return matches;
+}
+
 const CarouselProject: React.FC<CarouselProjectProps> = ({ onCardClick }) => {
-  return <HorizontalScrollCarousel onCardClick={onCardClick} />;
+  const isMdOrLarger = useMediaQuery("(min-width: 768px)"); 
+
+  return isMdOrLarger ? (
+    <HorizontalScrollCarousel onCardClick={onCardClick} />
+  ) : (
+    <VerticalList onCardClick={onCardClick} />
+  );
 };
 
 const HorizontalScrollCarousel: React.FC<{
@@ -33,8 +55,7 @@ const HorizontalScrollCarousel: React.FC<{
     target: targetRef,
   });
 
-
-const x = useTransform(scrollYProgress, [0, 1], ["1%", "-40%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-40%"]);
 
   return (
     <section ref={targetRef} className="relative h-[200vh] bg-[#DFDEDC]">
@@ -52,6 +73,28 @@ const x = useTransform(scrollYProgress, [0, 1], ["1%", "-40%"]);
   );
 };
 
+const VerticalList: React.FC<{
+  onCardClick: (
+    title: string,
+    text: string,
+    link: string,
+    frontend: string,
+    backend: string,
+    functionalities: string,
+    projetURL: string
+  ) => void;
+}> = ({ onCardClick }) => {
+  return (
+    <section className="bg-[#DFDEDC] py-10">
+      <div className="absolute flex-col items-center gap-4 left-[35%]">
+        {cards.map((card) => (
+          <Card key={card.id} card={card} onClick={onCardClick} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
 const Card: React.FC<{
   card: CardType;
   onClick: (
@@ -61,12 +104,12 @@ const Card: React.FC<{
     frontend: string,
     backend: string,
     functionalities: string,
-     projetURL:string
+    projetURL: string
   ) => void;
 }> = ({ card, onClick }) => {
   return (
     <div
-      className="group relative h-[400px] w-[400px] overflow-hidden bg-neutral-500 rounded-xl cursor-pointer"
+      className="group relative h-[300px] w-[250px] md:h-[400px] md:w-[400px] overflow-hidden bg-neutral-500 rounded-xl cursor-pointer"
       onClick={() =>
         onClick(
           card.title,
@@ -88,7 +131,7 @@ const Card: React.FC<{
         className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
       ></div>
       <div className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 grid place-content-center">
-        <p className="bg-gradient-to-br from-white/5 to-white/0 p-8 text-5xl font-black uppercase text-gray-100 backd backdrop-blur-lg">
+        <p className="bg-gradient-to-br from-white/5 to-white/0 p-4 text-3xl md:text-5xl font-black uppercase text-gray-100 backdrop-blur-lg">
           {card.title}
         </p>
       </div>

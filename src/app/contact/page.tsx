@@ -16,7 +16,7 @@ export default function Contact() {
   });
 
   return (
-    <div className="flex flex-col h-[90vh] w-[90vw] box-border relative">
+    <div className="flex flex-col h-[90vh] w-[90vw] mt-[130px] md:mt-0 box-border relative">
       <motion.div
         ref={headerRef}
         initial={{ opacity: 0, x: -100 }}
@@ -41,7 +41,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="md:flex-1 ml-[100px] md:ml-0 mb-56 md:mb-0">
+        <div className="items-center md:flex-1 ml-[100px] md:ml-0 mb-56 md:mb-0">
           <ContactForm />
         </div>
       </motion.div>
