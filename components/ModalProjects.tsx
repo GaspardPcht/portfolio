@@ -2,7 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Dispatch, SetStateAction } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import ButtonArrow from "./ButtonArrow";// Assurez-vous que le chemin est correct
+import ButtonArrow from "./ButtonArrow";
 
 interface ModalProps {
   isOpen: boolean;

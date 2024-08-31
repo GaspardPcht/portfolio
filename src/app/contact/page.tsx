@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import ContactForm from "../../../components/ContactsForm";
@@ -58,7 +59,7 @@ export default function Contact() {
           width={200}
           height={200}
           priority={true}
-          className="opacity-0 md:opacity-100" 
+          className="opacity-0 md:opacity-100"
         />
       </motion.div>
     </div>

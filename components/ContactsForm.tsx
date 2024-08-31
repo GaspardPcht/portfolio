@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import ButtonArrow from "./ButtonArrow";
@@ -8,7 +9,10 @@ const ContactForm: React.FC = () => {
     email: "",
     message: "",
   });
-  const [message, setMessage] = useState<{ text: string; type: 'success' | 'error' } | null>(null);
+  const [message, setMessage] = useState<{
+    text: string;
+    type: "success" | "error";
+  } | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -33,12 +37,18 @@ const ContactForm: React.FC = () => {
       .then(
         (result) => {
           console.log(result.text);
-          setMessage({ text: "Your message has been sent successfully! 😀", type: 'success' });
+          setMessage({
+            text: "Your message has been sent successfully! 😀",
+            type: "success",
+          });
           setFormData({ name: "", email: "", message: "" });
         },
         (error) => {
           console.error(error.text);
-          setMessage({ text: "There was an error sending your message. Please try again later 😢", type: 'error' });
+          setMessage({
+            text: "There was an error sending your message. Please try again later 😢",
+            type: "error",
+          });
         }
       );
   };

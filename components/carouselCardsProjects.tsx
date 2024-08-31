@@ -1,3 +1,4 @@
+"use client";
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
@@ -30,7 +31,7 @@ function useMediaQuery(query: string) {
 }
 
 const CarouselProject: React.FC<CarouselProjectProps> = ({ onCardClick }) => {
-  const isMdOrLarger = useMediaQuery("(min-width: 768px)"); 
+  const isMdOrLarger = useMediaQuery("(min-width: 768px)");
 
   return isMdOrLarger ? (
     <HorizontalScrollCarousel onCardClick={onCardClick} />
@@ -60,10 +61,7 @@ const HorizontalScrollCarousel: React.FC<{
   return (
     <section ref={targetRef} className="relative h-[200vh] bg-[#DFDEDC]">
       <div className="sticky top-0 h-[90vh] w-screen flex items-center overflow-hidden">
-        <motion.div
-          style={{ x }}
-          className="flex gap-4 "
-        >
+        <motion.div style={{ x }} className="flex gap-4 ">
           {cards.map((card) => (
             <Card key={card.id} card={card} onClick={onCardClick} />
           ))}
