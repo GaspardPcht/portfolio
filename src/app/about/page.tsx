@@ -1,12 +1,12 @@
 "use client";
-import React, { forwardRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
 interface AboutProps {}
 
-const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
+const About: React.FC<AboutProps> = () => {
   const { ref: headerRef, inView: headerInView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -17,24 +17,29 @@ const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
     threshold: 0.1,
   });
 
-  const { ref: imageRef, inView: imageInView } = useInView({
+  const { ref: imageRef1, inView: imageInView1 } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const { ref: imageRef2, inView: imageInView2 } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
   return (
-    <div
-      ref={ref}
-      className="flex flex-col h-screen w-[90vw] box-border relative"
-    >
+    <div className="flex flex-col h-screen w-[90vw] box-border relative">
       <motion.div
         ref={headerRef}
         initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: headerInView ? 1 : 0, x: headerInView ? 0 : -100 }}
+        animate={{
+          opacity: headerInView ? 1 : 0,
+          x: headerInView ? 0 : -100,
+        }}
         transition={{ delay: 0.5, duration: 0.5 }}
         className="flex flex-col items-start text-[#3C3C3C] mt-[100px] mb-[100px] ml-[40%]"
       >
-        <h1 className="text-4xl font-bold ">ABOUT ME</h1>
+        <h1 className="text-4xl font-bold">ABOUT ME</h1>
       </motion.div>
 
       <motion.div
@@ -55,9 +60,9 @@ const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
       </motion.div>
 
       <motion.div
-        ref={imageRef}
+        ref={imageRef1}
         initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: imageInView ? 1 : 0, y: imageInView ? 0 : 50 }}
+        animate={{ opacity: imageInView1 ? 1 : 0, y: imageInView1 ? 0 : 50 }}
         transition={{ delay: 1, duration: 0.5 }}
         className="absolute bottom-[25%] left-[200px] transform translate-x-[10%]"
       >
@@ -72,9 +77,9 @@ const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
       </motion.div>
 
       <motion.div
-        ref={imageRef}
+        ref={imageRef2}
         initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: imageInView ? 1 : 0, y: imageInView ? 0 : 50 }}
+        animate={{ opacity: imageInView2 ? 1 : 0, y: imageInView2 ? 0 : 50 }}
         transition={{ delay: 1, duration: 0.5 }}
         className="absolute md:bottom-0 -bottom-[13vh] left-[45%] transform translate-x-[10%]"
       >
@@ -88,8 +93,6 @@ const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
       </motion.div>
     </div>
   );
-});
-
-About.displayName = "About";
+};
 
 export default About;
