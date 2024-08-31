@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedButton from "../../components/AnimatedButton";
-import BubbleText from "../../components/BubbleText";
+import AnimatedButton from "../components/AnimatedButton";
+import BubbleText from "../components/BubbleText";
 
 export default function StartScreen() {
   return (
