@@ -19,11 +19,10 @@ const cardSources = [
 ];
 
 interface LanguesProps {
-  scrollToAbout?: () => void;
-  languesProps?: any;
+
 }
 
-const Langues: React.FC<LanguesProps> = ({ scrollToAbout }) => {
+const Langues: React.FC<LanguesProps> = ({  }) => {
   const { ref: headerRef, inView: headerInView } = useInView({
     triggerOnce: true,
     threshold: 0.1,

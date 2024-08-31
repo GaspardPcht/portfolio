@@ -103,7 +103,7 @@ export default function Home() {
         </button>
       </div>
       <div ref={languesRef} className="mt-32 md:mt-0">
-        <Langues scrollToAbout={scrollToAbout} />
+        <Langues/>
       </div>
       <div ref={aboutRef} className="mt-40 md:mt-0">
         <About />
