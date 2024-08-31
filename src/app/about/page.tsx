@@ -67,7 +67,7 @@ const About: React.FC<AboutProps> = () => {
         className="absolute bottom-[25%] left-[200px] transform translate-x-[10%]"
       >
         <Image
-          src="/assets/image/me.jpg"
+          src="/assets/image/me.png"
           alt="Image de Memoji saluant"
           width={300}
           height={300}
