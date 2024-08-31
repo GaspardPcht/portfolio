@@ -1,5 +1,5 @@
 "use client";
-import React, { forwardRef } from "react";
+import React, { forwardRef, Ref } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Carousel from "../../../components/carouselCardsLanguages";
@@ -18,8 +18,12 @@ const cardSources = [
   "/assets/icons/Redux.png",
 ];
 
-const Langues = forwardRef<HTMLDivElement, { scrollToAbout: () => void }>(
-  ({ scrollToAbout }, ref) => {
+interface LanguesProps {
+  scrollToAbout: () => void;
+}
+
+const Langues = forwardRef<HTMLDivElement, LanguesProps>(
+  ({ scrollToAbout }, ref: Ref<HTMLDivElement>) => {
     const { ref: headerRef, inView: headerInView } = useInView({
       triggerOnce: true,
       threshold: 0.1,
