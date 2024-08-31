@@ -19,7 +19,7 @@ const cardSources = [
 ];
 
 interface LanguesProps {
-  scrollToAbout: () => void;
+  scrollToAbout?: () => void;
 }
 
 const Langues: React.FC<LanguesProps> = ({ scrollToAbout }) => {
