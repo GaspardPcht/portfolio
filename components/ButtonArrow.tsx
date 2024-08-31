@@ -1,5 +1,4 @@
-'use client'
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 interface ButtonArrowProps {
@@ -8,12 +7,20 @@ interface ButtonArrowProps {
   type?: "button" | "submit";
 }
 
-const ButtonArrow: React.FC<ButtonArrowProps> = ({ text, href, type }) => {
-    const router = useRouter();
+const ButtonArrow: React.FC<ButtonArrowProps> = ({
+  text,
+  href,
+  type = "button",
+}) => {
+  const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleClick = () => {
     if (href) {
-      // Handle internal routing
       if (href.startsWith("http")) {
         window.open(href, "_blank");
       } else {
@@ -22,10 +29,14 @@ const ButtonArrow: React.FC<ButtonArrowProps> = ({ text, href, type }) => {
     }
   };
 
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <div>
-      <a
-
+      <button
+        type={type}
         className="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-[#3C3C3C] border-2 border-[#3C3C3C] rounded-xl hover:text-white group hover:bg-[#3C3C3C]"
         onClick={handleClick}
       >
@@ -39,15 +50,15 @@ const ButtonArrow: React.FC<ButtonArrowProps> = ({ text, href, type }) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M14 5l7 7m0 0l-7 7m7-7H3"
             ></path>
           </svg>
         </span>
         <span className="relative">{text}</span>
-      </a>
+      </button>
     </div>
   );
 };
