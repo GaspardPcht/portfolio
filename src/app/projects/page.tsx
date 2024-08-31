@@ -1,8 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import CarouselProject from "../../components/CarouselCardsProjects";
-import Modal from "../../components/ModalProjects";
+import CarouselProject from "../../../components/CarouselCardsProjects";
+import Modal from "../../../components/ModalProjects";
 import { useInView } from "react-intersection-observer";
 
 export default function Projects() {

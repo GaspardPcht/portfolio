@@ -2,7 +2,7 @@
 import React, { forwardRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Carousel from "../../components/carouselCardsLanguages";
+import Carousel from "../../../components/carouselCardsLanguages";
 import Image from "next/image";
 
 const cardSources = [

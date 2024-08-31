@@ -1,12 +1,12 @@
 "use client";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import Header from "../../components/Header";
+import Header from "../../../components/Header";
 import Image from "next/image";
 import Langues from "../langues/page";
 import About from "../about/page";
 import Projects from "../projects/page";
-import BubbleText from "../../components/BubbleText";
+import BubbleText from "../../../components/BubbleText";
 import Contact from "../contact/page";
 import { RxDoubleArrowDown } from "react-icons/rx";
 
