@@ -217,7 +217,7 @@ const cards: CardType[] = [
     text: "TicketHack is a web application designed for train ticket reservations. Developed with Vanilla JavaScript, HTML, and CSS, it allows users to create accounts, search for train routes, add tickets to their cart, and complete payments. The backend is powered by Node.js, Express.js, and Mongoose, ensuring secure and efficient handling of user data and transactions.",
   },
   {
-    projetURL: "https://mymoviz-frontend-six-theta.vercel.app/",
+    projetURL: "https://netflux-frontend.vercel.app/",
     url: "assets/image/cinema.avif",
     title: "Movies",
     id: 3,
