@@ -6,7 +6,7 @@ import BubbleText from "../../components/BubbleText";
 
 export default function StartScreen() {
   return (
-    <div className="flex flex-col h-screen p-1 box-border relative">
+    <div className="flex flex-col h-screen box-border relative">
       <header className="flex items-center justify-between ml-8 mb-16 p-6">
         <span className="md:text-xl text-2xl mr-11 md:mr-0 font-bold font-[League Spartan] text-black stroke-black stroke-1 relative z-10">
           <BubbleText text="GASPARDPCHT" />
@@ -42,14 +42,14 @@ export default function StartScreen() {
           </motion.a>
         </div>
       </header>
-      <div className="flex-1 flex items-center md:ml-[200px] mb-[100px]">
+      <div className="flex-1 flex items-center ml-5 md:ml-[200px] mb-[100px]">
         <h1 className="text-5xl font-bold text-[#3C3C3C]">
           <span>HEY THERE!</span>
           <br />
           <span className="mt-4 block">WELCOME IN MY UNIVERSE!</span>
         </h1>
       </div>
-      <div className="absolute bottom-[0px] left-[10%] transform -translate-x-1/2">
+      <div className="absolute bottom-[0px] opacity-0 md:opacity-100 left-[10%] transform -translate-x-1/2">
         <Image
           src="/assets/memoji/hey.png"
           alt="Memoji Hey"
