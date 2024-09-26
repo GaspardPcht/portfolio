@@ -91,15 +91,16 @@ const Langues: React.FC<LanguesProps> = ({  }) => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: imageInView ? 1 : 0, y: imageInView ? 0 : 50 }}
         transition={{ delay: 1.2, duration: 0.5 }}
-        className="absolute md:bottom-0 -bottom-[15vh] right-[-90px] transform translate-x-[10%]"
+        className="absolute md:bottom-0 -bottom-[15vh] md:right-[-90px] transform translate-x-[10%] "
       >
-        {/* <Image
+        <Image
           src="/assets/memoji/delicious.png"
           alt="Image de Memoji saluant"
           width={200}
           height={200}
           priority={true}
-        /> */}
+          className="opacity-0 md:opacity-100 "
+        />
       </motion.div>
     </div>
   );
