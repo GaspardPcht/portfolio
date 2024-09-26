@@ -55,6 +55,7 @@ export default function StartScreen() {
           alt="Memoji Hey"
           width={200}
           height={30}
+          className="opacity-0 md:opacity-100"
         />
       </div>
       <div className="flex md:justify-end justify-center md:mr-[200px] mb-[100px] mt-5">
