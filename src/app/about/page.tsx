@@ -89,6 +89,7 @@ const About: React.FC<AboutProps> = () => {
           width={200}
           height={200}
           priority={true}
+          className="opacity-0 md:opacity-100"
         />
       </motion.div>
     </div>
