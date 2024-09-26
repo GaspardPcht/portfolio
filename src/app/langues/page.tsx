@@ -53,7 +53,7 @@ const Langues: React.FC<LanguesProps> = ({  }) => {
           x: headerInView ? 0 : -100,
         }}
         transition={{ delay: 0.5, duration: 0.5 }}
-        className="flex flex-col items-start text-[#3C3C3C] mt-[100px] ml-[10%]"
+        className="flex flex-col items-start text-[#3C3C3C] mt-[40px] ml-[25%]"
       >
         <h1 className="text-4xl font-bold">LANGUAGES</h1>
       </motion.div>
@@ -64,7 +64,7 @@ const Langues: React.FC<LanguesProps> = ({  }) => {
         animate={{ opacity: textInView ? 1 : 0, scale: textInView ? 1 : 0.8 }}
         transition={{ delay: 0.7, duration: 0.5 }}
         className="bg-[#CDCDCB] text-center flex-col flex items-center justify-center absolute mt-[200px] md:right-[-1%] w-[90%]
-        lg:w-[60%] p-6 rounded-xl shadow-lg ml-[68px]"
+        lg:w-[60%] p-6 rounded-xl shadow-lg md:ml-[68px] ml-6"
       >
         <p className="text-lg mt-3">
           I am skilled in modern web and mobile technologies including React,
@@ -81,7 +81,7 @@ const Langues: React.FC<LanguesProps> = ({  }) => {
           y: carouselInView ? 0 : 50,
         }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="carousel ml-[85px] md:mt-[220px] mt-[300px] gap-6 md:mr-[80px] md:ml-[200px]"
+        className="carousel  md:mt-[220px] mt-[400px] gap-6 md:mr-[80px] md:ml-[200px]"
       >
         <Carousel cards={cardSources} />
       </motion.div>
@@ -93,13 +93,13 @@ const Langues: React.FC<LanguesProps> = ({  }) => {
         transition={{ delay: 1.2, duration: 0.5 }}
         className="absolute md:bottom-0 -bottom-[15vh] right-[-90px] transform translate-x-[10%]"
       >
-        <Image
+        {/* <Image
           src="/assets/memoji/delicious.png"
           alt="Image de Memoji saluant"
           width={200}
           height={200}
           priority={true}
-        />
+        /> */}
       </motion.div>
     </div>
   );

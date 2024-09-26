@@ -19,7 +19,7 @@ export default function Header({
 
   return (
     <div className="relative flex items-center justify-between ml-8 p-6 border-b border-gray-300">
-      <div className="flex items-center w-full  justify-between  text-black">
+      <div className="flex items-center w-full gap-[80px] text-black">
         <motion.span
           className="text-xl font-bold font-[League Spartan] text-black stroke-black stroke-1 relative z-10"
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ export default function Header({
           <BubbleText text="GASPARDPCHT" />
         </motion.span>
         <button
-          className="md:hidden hover:bg-transparent text-3xl text-black relative z-20"
+          className="md:hidden hover:bg-transparent text-3xl text-black ml-[10px] relative z-20"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle Menu"
         >

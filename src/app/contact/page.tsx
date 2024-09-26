@@ -17,13 +17,13 @@ export default function Contact() {
   });
 
   return (
-    <div className="flex flex-col h-[90vh] w-[90vw] mt-[130px] md:mt-0 box-border relative">
+    <div className="flex flex-col h-[90vh] w-[90vw] mt-[40px] md:mt-0 box-border relative">
       <motion.div
         ref={headerRef}
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: headerInView ? 1 : 0, x: headerInView ? 0 : -100 }}
         transition={{ delay: 0.5, duration: 0.5 }}
-        className="flex flex-col items-start text-[#3C3C3C] ml-[70%]"
+        className="flex flex-col items-start text-[#3C3C3C] md:ml-[60%] ml-[33%] "
       >
         <h1 className="text-4xl font-bold">CONTACT</h1>
       </motion.div>
@@ -42,7 +42,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="items-center md:flex-1 ml-[100px] md:ml-0 mb-56 md:mb-0">
+        <div className="items-center md:flex-1 ml-[40px] md:ml-0 md:mb-0">
           <ContactForm />
         </div>
       </motion.div>
@@ -51,7 +51,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute md:bottom-0  left-[90px] transform translate-x-[10%]"
+        className="absolute md:bottom-0 left-[90px] transform translate-x-[10%]"
       >
         <Image
           src="/assets/memoji/thumb.png"

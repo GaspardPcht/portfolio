@@ -61,7 +61,7 @@ const HorizontalScrollCarousel: React.FC<{
   return (
     <section ref={targetRef} className="relative h-[200vh] bg-[#DFDEDC]">
       <div className="sticky top-0 h-[90vh] w-screen flex items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-4 ">
+        <motion.div style={{ x }} className="flex gap-4">
           {cards.map((card) => (
             <Card key={card.id} card={card} onClick={onCardClick} />
           ))}
@@ -83,8 +83,8 @@ const VerticalList: React.FC<{
   ) => void;
 }> = ({ onCardClick }) => {
   return (
-    <section className="bg-[#DFDEDC] py-10">
-      <div className="absolute flex-col items-center gap-4 left-[35%]">
+    <section className="bg-[#DFDEDC] py-10 ">
+      <div className="absolute flex-col items-center gap-4 md:left-[35%] left-[90px] ">
         {cards.map((card) => (
           <Card key={card.id} card={card} onClick={onCardClick} />
         ))}
@@ -107,7 +107,7 @@ const Card: React.FC<{
 }> = ({ card, onClick }) => {
   return (
     <div
-      className="group relative h-[300px] w-[250px] md:h-[400px] md:w-[400px] overflow-hidden bg-neutral-500 rounded-xl cursor-pointer"
+      className="group relative h-[300px] w-[250px] md:h-[400px] md:w-[400px] overflow-hidden bg-neutral-500 rounded-xl cursor-pointer mb-4 md:mb-0"
       onClick={() =>
         onClick(
           card.title,

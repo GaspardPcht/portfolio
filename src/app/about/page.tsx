@@ -37,7 +37,7 @@ const About: React.FC<AboutProps> = () => {
           x: headerInView ? 0 : -100,
         }}
         transition={{ delay: 0.5, duration: 0.5 }}
-        className="flex flex-col items-start text-[#3C3C3C] mt-[100px] mb-[100px] ml-[40%]"
+        className="flex flex-col items-start text-[#3C3C3C] mt-[40px] mb-[100px] md:ml-[40%] ml-[30%]"
       >
         <h1 className="text-4xl font-bold">ABOUT ME</h1>
       </motion.div>
@@ -47,7 +47,7 @@ const About: React.FC<AboutProps> = () => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: textInView ? 1 : 0, scale: textInView ? 1 : 0.8 }}
         transition={{ delay: 0.7, duration: 0.5 }}
-        className="bg-[#CDCDCB] text-center flex items-center justify-center absolute mt-[300px] md:right-[3%] w-[90%] xl:w-[50%] p-6 rounded-xl shadow-lg ml-[85px] md:ml-0"
+        className="bg-[#CDCDCB] text-center flex items-center justify-center absolute mt-[200px] md:mt-[300px] md:right-[3%] w-[90%] xl:w-[50%] p-6 rounded-xl shadow-lg ml-[40px] md:ml-0"
       >
         <p className="text-lg mt-3">
           I am a 23-year-old web and mobile developer based in France.
@@ -81,7 +81,7 @@ const About: React.FC<AboutProps> = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: imageInView2 ? 1 : 0, y: imageInView2 ? 0 : 50 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute md:bottom-0 -bottom-[13vh] left-[45%] transform translate-x-[10%]"
+        className="absolute md:bottom-0 bottom-[0px] md:left-[45%] left-[30%] transform translate-x-[10%]"
       >
         <Image
           src="/assets/memoji/zen.png"
