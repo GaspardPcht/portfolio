@@ -42,13 +42,13 @@ export default function Home() {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="relative flex flex-col item-start md:mt-[100px] md:ml-[100px] text-[#3C3C3C]"
         >
-          <h1 className="mb-5 text-5xl font-bold">
+          <h1 className="mb-5 md:text-5xl text-3xl  font-bold">
             I'M{" "}
             <span className="text-white stroke-black stroke-1 relative z-10">
               <BubbleText text="GASPARDPCHT" />
             </span>
           </h1>
-          <h1 className="md:ml-[70px] text-4xl font-semibold">
+          <h1 className="md:ml-[70px] md:text-4xl text-2xl font-semibold">
             I'M DEVELOPER WEB AND MOBILE
           </h1>
         </motion.div>

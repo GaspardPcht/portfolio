@@ -43,7 +43,7 @@ export default function StartScreen() {
         </div>
       </header>
       <div className="flex-1 flex items-center ml-5 md:ml-[200px] mb-[100px]">
-        <h1 className="text-5xl font-bold text-[#3C3C3C]">
+        <h1 className="md:text-5xl text-3xl font-bold text-[#3C3C3C]">
           <span>HEY THERE!</span>
           <br />
           <span className="mt-4 block">WELCOME IN MY UNIVERSE!</span>
