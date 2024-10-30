@@ -56,7 +56,7 @@ const HorizontalScrollCarousel: React.FC<{
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-40%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-50%"]);
 
   return (
     <section ref={targetRef} className="relative h-[200vh] bg-[#DFDEDC]">
@@ -162,17 +162,18 @@ const cards: CardType[] = [
       "Online booking, Course listings, Pricing lists, Studio and team presentation",
     text: "FlowStudio is a website for a Pole Dance studio, designed with Figma and developed with WordPress. The site features a modern interface with functionalities such as online booking, course listings, pricing details, and an overview of the studio and its team",
   },
-  // {
-  //   projetURL: "https://poledancewithme.wordpress.com/",
-  //   url: "assets/image/dogAround.avif",
-  //   title: "Dog Around",
-  //   id: 2,
-  //   frontend: "React Native, Redux Persist",
-  //   backend: "Express.js, Node.js, Mongoose",
-  //   functionalities:
-  //     "Global dog-walking planning, Integrated chat, Profile customization",
-  //   text: "Dog Around is an innovative mobile app designed to enhance dog-walking experiences worldwide. It features an intuitive interface, advanced geolocation, a custom integrated chat for seamless communication, and options to personalize and update user and dog profiles.",
-  // },
+{
+  projetURL: "https://song-iq-front.vercel.app/",
+  url: "assets/image/songIQ.png",
+  title: "SongIQ",
+  id: 2,
+  frontend: "Next.js, React, Redux Persist, Tailwind",
+  backend: "Express.js, Node.js, Mongoose",
+  functionalities: 
+    "Music blind test, Player leaderboard, User authentication, Spotify API integration, Genre-based filtering",
+  text: 
+    "SongIQ is a web application that challenges users’ knowledge of music through a blind test game format. It features an interactive leaderboard, secure user login, and integration with the Spotify API to retrieve and filter tracks by genre, providing an immersive and customized musical experience."
+},
   {
     projetURL: "https://hacka-tweet-front.vercel.app/",
     url: "assets/image/twitter.avif",
